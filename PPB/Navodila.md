@@ -29,3 +29,8 @@ CREATE TABLE Persons (
     PRIMARY KEY (ID)
 );
 ```
+ce pozabs dodat primary key
+```
+ALTER TABLE Persons
+ADD PRIMARY KEY (ID);
+```
