@@ -34,3 +34,7 @@ ce pozabs dodat primary key
 ALTER TABLE Persons
 ADD PRIMARY KEY (ID);
 ```
+
+```
+mysqldump -u root -p imebaze > imedatoteke.sql
+``
