@@ -1,15 +1,15 @@
 start mysql v xamppu
-```
+```sql
 mysql -u root -p  //gres notr v mariaDB
 ```
 nardis database //CREATE DATABASE sola
 
 gres nazaj //
-```
+```sql
 exit
 ```
 loh iz sola.sql fila ce mas narjenga importas v solo
-```
+```sql
 mysql -u root -p sola < skola.sql;
 SHOW DATABASES; // pokaze use baze
 
@@ -20,7 +20,7 @@ SHOW TABLES; // pokaze tabele v bazi
 SELECT * FROM dijak;
 ```
 
-```
+```sql
 CREATE TABLE Persons (
     ID int NOT NULL,
     LastName varchar(255) NOT NULL,
@@ -30,11 +30,11 @@ CREATE TABLE Persons (
 );
 ```
 ce pozabs dodat primary key
-```
+```sql
 ALTER TABLE Persons
 ADD PRIMARY KEY (ID);
 ```
 
-```
+```sql
 mysqldump -u root -p imebaze > imedatoteke.sql
-``
+```
