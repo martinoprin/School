@@ -69,6 +69,35 @@ LOCK TABLES `stranke` WRITE;
 /*!40000 ALTER TABLE `stranke` DISABLE KEYS */;
 /*!40000 ALTER TABLE `stranke` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `zaposleni`
+--
+
+DROP TABLE IF EXISTS `zaposleni`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `zaposleni` (
+  `zaposleniID` int(11) NOT NULL,
+  `ime` varchar(50) NOT NULL,
+  `priimek` varchar(50) NOT NULL,
+  `naslov` varchar(50) NOT NULL,
+  `postna_stevilka` int(11) NOT NULL,
+  `kraj` varchar(50) NOT NULL,
+  `telefon` int(11) NOT NULL,
+  `lokacija` int(11) NOT NULL,
+  PRIMARY KEY (`zaposleniID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `zaposleni`
+--
+
+LOCK TABLES `zaposleni` WRITE;
+/*!40000 ALTER TABLE `zaposleni` DISABLE KEYS */;
+/*!40000 ALTER TABLE `zaposleni` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -79,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-28 10:19:53
+-- Dump completed on 2024-03-27 10:38:27
