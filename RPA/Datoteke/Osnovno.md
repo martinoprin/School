@@ -59,3 +59,41 @@ void izprazni_datoteko(const char filename[]){
     datao.close();
 }
 ```
+BESEDE Z SAMOGLASNIKI
+```cpp
+#include<fstream>
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+void vpis(const char filename[], string text){
+    ofstream datao(filename, ios::app);
+    datao << text << endl;
+    datao.close();
+}
+
+int main(){
+
+    for(int i = 0; i<3; i++){
+
+    string c;
+    //getline(cin, c);
+    //vpis("datotekaneki.txt", c);
+    }
+
+    ifstream datai("datotekaneki.txt");
+    string s;
+    while(datai >> s)
+        switch (s[0]){
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        cout << s << endl;
+
+        }
+    return 0;
+}
+```
