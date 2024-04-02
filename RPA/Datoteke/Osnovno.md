@@ -60,11 +60,13 @@ void izprazni_datoteko(const char filename[]){
 }
 ```
 <h2>BRISANJE</h2>
+
 ```cpp
 remove("ime_datoteke");
 rename("staro.txt", "novo.txt");
 //Ustvarimo novo datoteko, prepisemo podatke iz stare, zbrisemo staro in preimenujemo novo
 ```
+
 BESEDE Z SAMOGLASNIKI
 ```cpp
 #include<fstream>
