@@ -38,3 +38,13 @@ ADD PRIMARY KEY (ID);
 ```sql
 mysqldump -u root -p imebaze > imedatoteke.sql
 ```
+
+Create user martin@localhodt;
+show grants for martin@localjost;
+create role dijak;
+grant dijak to martin@localhost;
+select host, user FROM mysql.user
+grant select on sola.neki TO dijak;
+GRANT INSERT ,UPDATE, DELETE ON sola.neki TO dijak;
+SHOW GRANTS FOR dijak;
+
