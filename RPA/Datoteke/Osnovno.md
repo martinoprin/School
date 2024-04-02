@@ -14,7 +14,7 @@ void zapisi_v_datoteko(const char filename[], const char text[]){
 }
 ```
 
-<h2>IZPIS</h2>
+<h2>IZPIS</h2><p>
 Vsaka vrstica posebej
 
 ```cpp
@@ -36,6 +36,18 @@ void izpisi_besede(const char filename[]){
         cout << s << endl;
     
     datai.close();
+}
+```
+Izpisi znake
+```cpp
+void izpisi_znake(const char filename[]){
+    ifstream datai(filename);
+    char c;
+    while(datai >> c) 
+        cout << c;
+    
+    datai.close();
+    //Izpise se vse skupaj brez presledkov - while(data >> noskipws >> c)
 }
 ```
 
