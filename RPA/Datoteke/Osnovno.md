@@ -105,3 +105,32 @@ int main(){
     return 0;
 }
 ```
+Stevila v intervalu
+```cpp
+#include <fstream>
+#include <iostream>
+#include <string>
+
+using  namespace std;
+
+int main(){
+    ofstream datao("neki.txt", ios::app);
+    int a;
+    for(int i = 0; i<10; i++){
+    do{
+        cout << "Vnesi stevilo: ";
+        cin >> a;
+        if(a < 60 || a > 80)
+            cout << "Stevilo ni v intervalu [60, 80]!" << endl;
+        else
+            datao << a << endl;
+    }
+    while(a < 60 || a > 80);
+    }
+
+    datao.close();
+
+
+    return 0;
+}
+```
