@@ -47,4 +47,8 @@ select host, user FROM mysql.user
 grant select on sola.neki TO dijak;
 GRANT INSERT ,UPDATE, DELETE ON sola.neki TO dijak;
 SHOW GRANTS FOR dijak;
+GRANT SELECT ON *.* TO dijak
+
+
+mysqldump -u root -p --system=all --insert-ignore
 
