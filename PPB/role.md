@@ -1,3 +1,9 @@
+• DML ukazi so:
+  – SELECT – poizvedovanje podatkov iz tabelah
+  – INSERT – dodajanje zapisov v tabelo
+  – UPDATE – spreminjanje podatkov na zapisih v tabeli
+  – DELETE – brisanje zapisov iz tabele
+
 ```sql
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
 SHOW GRANTS FOR user-account;
