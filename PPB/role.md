@@ -13,3 +13,4 @@ REVOKE DELETE ON mydb.mytable FROM 'username';
 GRANT SELECT, INSERT ON mydb.* TO 'username';
 
 ```
+neki
