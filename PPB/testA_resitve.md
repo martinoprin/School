@@ -1,0 +1,16 @@
+TEST A
+
+```sql
+1.
+ALTER TABLE Izpit
+ADD FOREIGN KEY (PredmetID) REFERENCES Predmet(PredmetID);
+
+ALTER TABLE Opravljanje
+DROP PRIMARY KEY;
+
+ALTER TABLE Predmet
+MODIFY COLUMN ImePredmeta INT;
+
+ALTER TABLE Students
+ADD COLUMN PotekStatusa DATE NOT NULL;
+```
