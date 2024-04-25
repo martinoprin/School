@@ -26,12 +26,16 @@ FUNKCIJE
 ```sql
 SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
        LOWER(st1)
-       LEFT
-       RIGHT
-       REVERSE
-       REPEAT
-       CONCAT
-       RAND
+       LEFT(st1, 4)//kok crk iz leve se izpise
+       RIGHT()
+       REVERSE() //izpise obratno
+       REPEAT(st1, 4)  //kolikokrat se ponovi
+       CONCAT("neki", st1)
+       RAND()
+       INSERT(st1, 2, 4, 'dan') //stolpec, kje bo, kok dolgo, 'niz'
+       CHAR_LENGTH() //dolzina niza
+       REPLACE()
+       LOCATE()
 <br>
 <br>
 <br>
