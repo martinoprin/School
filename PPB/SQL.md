@@ -9,6 +9,7 @@ SHOW CREATE tabela;
 SHOW TABLES;
 SHOW DATABASES;
 DESCRIBE tabela;
+```
 
 **DDL** <p>
 -------------------
