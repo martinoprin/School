@@ -3,6 +3,11 @@
 <br>
 <br>
 <p>
+```sql
+SHOW CREATE tabela;
+SHOW TABLES;
+SHOW DATABASES;
+DESCRIBE tabela;
 
 **DDL** <p>
 -------------------
@@ -33,9 +38,13 @@ SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
        CONCAT("neki", st1)
        INSERT(st1, 2, 4, 'dan') //stolpec, kje bo, kok dolgo, 'niz'
        CHAR_LENGTH() //dolzina niza
-       RAND()
        REPLACE()
        LOCATE()
+SELECT st1, RAND(200)*100 FROM tabela
+
+AVG()
+MIN()
+MAX()
 ```
 <br>
 <br>
