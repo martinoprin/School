@@ -63,6 +63,6 @@ mysql -u Nada -p
 USE ime_baze_podatkov;
 
 -- Vnesite novo vrstico v tabelo 'Izpit'
-INSERT INTO Izpit (ime_stolpca1, ime_stolpca2, ...)
-VALUES (vrednost1, vrednost2, ...);
+INSERT INTO Izpit (IzpitID, Predmet, Datum, Opombe)
+VALUES (1, 'KEM', '03-05-2024', 'prazno');
 ```
