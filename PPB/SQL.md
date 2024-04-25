@@ -45,6 +45,15 @@ SELECT st1, RAND(200)*100 FROM tabela
 AVG()
 MIN()
 MAX()
+FLOOR()
+CEIL()
+ROUND()
+POW(st, potenca)
+SQRT()
+GREATEST()
+LEAST()
+ABS()
+
 ```
 <br>
 <br>
@@ -175,6 +184,11 @@ DROP ROLE Serviser; //zbrise rolo
 REVOKE Serviser ON tabela1 FROM Janez; //vzame pravico
 SET PASSWORD FOR Janez = PASSWORD('geslo');
 ALTER TABLE tabela1 MODIFY COLUMN st1 FLOAT //spremeni tip spremenljivke v float
+
+SET ROLE vloga; //zacnemo uporabljati vlogo v doloecenm racunu po prijavi
+SELECT CURRENT_ROLE;
+REVOKE SELECT ON *.* FROM uporabnik;
+GRANT ALL TO uporabnik/vloga;
 ```
 VAJA
 ```SQL
