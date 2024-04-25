@@ -1,8 +1,34 @@
-* DML ukazi so: <p>
-  – SELECT – poizvedovanje podatkov iz tabelah <p>
-  – INSERT – dodajanje zapisov v tabelo <p>
-  – UPDATE – spreminjanje podatkov na zapisih v tabeli <p>
-  – DELETE – brisanje zapisov iz tabele <p>
+# SQL
+
+<br>
+<br>
+
+**DDL** <p>
+-------------------
+
+  - CREATE - ustvarjanje tabele...
+  - ALTER - spreminjanje ustvarjene tabele
+  - DROP - izbrise celo tabelo
+  - TRUNCATE - izbrise podatke ne pa tabele
+  - RENAME - spremeni ime tabele
+-----------------
+
+**DML** <p>
+  - SELECT – poizvedovanje podatkov iz tabel
+  - INSERT – dodajanje zapisov v tabelo
+  - UPDATE – spreminjanje podatkov na zapisih v tabeli
+  - DELETE – brisanje zapisov iz tabele
+------------------
+**DCL** <p>
+  - GRANT - doda pravice specificiranemu uporabniku
+  - REVOKE - uzame pravice uporabniku
+-----------------
+FUNKCIJE
+
+<br>
+<br>
+<br>
+
 
 ```sql
 CREATE USER 'username'@'host' IDENTIFIED BY 'password';
