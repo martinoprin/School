@@ -40,8 +40,8 @@ SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
        CONCAT("neki", st1)
        INSERT(st1, 2, 4, 'dan') //stolpec, kje bo, kok dolgo, 'niz'
        CHAR_LENGTH() //dolzina niza
-       REPLACE()
-       LOCATE()
+       REPLACE(niz, znak_ki_ga_zamenjamo, znak_s_katerim_ga_zamenjamo)
+       LOCATE(iskan_niz, kje_zacnemo_iskati);
 
 SELECT st1, RAND(200)*100 FROM tabela
             AVG()
@@ -55,6 +55,7 @@ SELECT st1, RAND(200)*100 FROM tabela
             GREATEST()
             LEAST()
             ABS()
+            SIGN() > < = 0
 
 ```
 <br>
