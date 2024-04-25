@@ -103,6 +103,15 @@ UPDATE tabela SET Ime = 'Peter' WHERE 'telefonska_st' = 040 648 555;
 DELETE FROM tabela WHERE Ime = 'Peter' AND Priimek = 'Novak'
 CREATE TABLE tabela1 (ID_cloveka INT PK, Ime varchar NOT NULL, Priimek varchar NOT NULL);
 ```
+ALTER
+```sql
+ALTER TABLE tabela1 MODIFY COLUMN ime_stolpca INT;
+ALTER TABLE tabela1 ADD PRIMARY KEY (ime_stoplca);
+ALTER TABLE tabela1 DROP PRIMARY KEY;
+ALTER TABLE tabela1 ADD COLUMN ime_stolpca (...)//isto kot pri create;
+ALTER TABLE tabela1 DROP FOREIGN KEY ime_stolpca_kljuca;
+ALTER TABLE tabela1 RENAME COLUMN stolpec TO novo_ime;
+```
 <br>
 <br>
 <br>
