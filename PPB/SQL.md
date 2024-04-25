@@ -42,19 +42,19 @@ SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
        CHAR_LENGTH() //dolzina niza
        REPLACE()
        LOCATE()
-SELECT st1, RAND(200)*100 FROM tabela
 
-AVG()
-MIN()
-MAX()
-FLOOR()
-CEIL()
-ROUND()
-POW(st, potenca)
-SQRT()
-GREATEST()
-LEAST()
-ABS()
+SELECT st1, RAND(200)*100 FROM tabela
+            AVG()
+            MIN()
+            MAX()
+            FLOOR()
+            CEIL()
+            ROUND()
+            POW(st, potenca)
+            SQRT()
+            GREATEST()
+            LEAST()
+            ABS()
 
 ```
 <br>
