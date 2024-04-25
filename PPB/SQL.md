@@ -3,6 +3,7 @@
 <br>
 <br>
 <p>
+  
 ```sql
 SHOW CREATE tabela;
 SHOW TABLES;
