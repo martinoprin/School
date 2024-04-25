@@ -23,7 +23,15 @@
   - REVOKE - uzame pravice uporabniku
 -----------------
 FUNKCIJE
-
+```sql
+SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
+       LOWER(st1)
+       LEFT
+       RIGHT
+       REVERSE
+       REPEAT
+       CONCAT
+       RAND
 <br>
 <br>
 <br>
@@ -139,6 +147,12 @@ CREATE USER Janez; //ustvari uporabnika
 CREATE ROLE Serviser; //ustvari rolo
 GRANT Serviser TO Janez; //janez ima pravice serviserja
 GRANT SELECT ON tabela1 TO Serviser //Vsi serviserji dobijo pravice do SELECT
+
+DROP ROLE Serviser; //zbrise rolo
+REVOKE Serviser ON tabela1 FROM Janez; //vzame pravico
+SET PASSWORD FOR Janez = PASSWORD('geslo');
+ALTER TABLE tabela1 MODIFY COLUMN st1 FLOAT //spremeni tip spremenljivke v float
+```
 VAJA
 ```SQL
 INSERT INTO Gosti(ime, priimek, kraj_bivanja, datum_rojstva)
