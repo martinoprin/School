@@ -31,11 +31,12 @@ SELECT UPPER(st1) FROM tabela; //cel izpis VELIK
        REVERSE() //izpise obratno
        REPEAT(st1, 4)  //kolikokrat se ponovi
        CONCAT("neki", st1)
-       RAND()
        INSERT(st1, 2, 4, 'dan') //stolpec, kje bo, kok dolgo, 'niz'
        CHAR_LENGTH() //dolzina niza
+       RAND()
        REPLACE()
        LOCATE()
+```
 <br>
 <br>
 <br>
