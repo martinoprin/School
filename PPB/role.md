@@ -2,17 +2,16 @@
 
 <br>
 <br>
+<p>
 
 **DDL** <p>
 -------------------
-
   - CREATE - ustvarjanje tabele...
   - ALTER - spreminjanje ustvarjene tabele
   - DROP - izbrise celo tabelo
   - TRUNCATE - izbrise podatke ne pa tabele
   - RENAME - spremeni ime tabele
 -----------------
-
 **DML** <p>
   - SELECT – poizvedovanje podatkov iz tabel
   - INSERT – dodajanje zapisov v tabelo
@@ -73,6 +72,14 @@ TRUNCATE TABLE students;
 5. RENAME - Changes the name of a table
 ```sql
 RENAME TABLE students TO alumni;
+```
+PRIMERI:
+```sql
+SELECT * FROM tabela1 INNER JOIN tabela2 ON tabela1.ID = tabela2.ID;
+INSERT INTO tabela ('Ime', 'Priimek', 'Starost') VALUES('Tomaz', 'Novak', 19);
+UPDATE tabela SET Ime = 'Peter' WHERE 'telefonska_st' = 040 648 555;
+DELETE FROM tabela WHERE Ime = 'Peter' AND Priimek = 'Novak'
+CREATE TABLE tabela1 (ID_cloveka INT PK, Ime varchar NOT NULL, Priimek varchar NOT NULL);
 ```
 <br>
 <br>
