@@ -133,7 +133,12 @@ GRANT SELECT, INSERT ON students TO 'author@email.com';
 ```sql
 REVOKE INSERT ON students FROM 'author@email.com';
 ```
-
+PRIMERI:
+```sql
+CREATE USER Janez; //ustvari uporabnika
+CREATE ROLE Serviser; //ustvari rolo
+GRANT Serviser TO Janez; //janez ima pravice serviserja
+GRANT SELECT ON tabela1 TO Serviser //Vsi serviserji dobijo pravice do SELECT
 VAJA
 ```SQL
 INSERT INTO Gosti(ime, priimek, kraj_bivanja, datum_rojstva)
