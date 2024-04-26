@@ -14,14 +14,9 @@ GRANT UPDATE, DELETE ON status TO svet_delavec;
 
 ```sql
 2.
--- Ustvarjanje vloge svet_delavec
-CREATE ROLE svet_delavec;
-
--- Dodeljevanje pravic za posodabljanje in brisanje v tabeli students
-GRANT UPDATE, DELETE ON students TO svet_delavec;
-
--- Dodeljevanje pravic za posodabljanje in brisanje v tabeli status
-GRANT UPDATE, DELETE ON status TO svet_delavec;
+CREATE USER vojko@localhost IDENTIFIED BY 'geslo'
+GRANT svet_delavev TO vojko@localhost
+GRANT SELECT ON status TO vojko@localhost
 ```
 
 ```sql
