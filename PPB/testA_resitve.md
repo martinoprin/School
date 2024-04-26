@@ -27,7 +27,7 @@ GRANT SELECT, INSERT, UPDATE ON Izpit TO ucitelj;
 GRANT SELECT, INSERT, UPDATE ON Opravljanje TO ucitelj;
 
 -- Dodelite vlogo 'ucitelj' uporabniku
-ALTER ROLE ucitelj WITH LOGIN;
+GRANT ucitelj TO uporabnik@localhost
 ```
 
 ```sql
