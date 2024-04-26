@@ -32,8 +32,7 @@ REVOKE DELETE ON student FROM svet_delavec;
 
 ```sql
 4.
--- Odvzem pravice do brisanja podatkov iz tabele student vlogi svet_delavec
-REVOKE DELETE ON student FROM 'svet_delavec'@'localhost';
+SELECT CURRENT_ROLE
 ```
 
 ```sql
