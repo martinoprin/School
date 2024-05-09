@@ -1,3 +1,4 @@
+```cpp
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -53,6 +54,7 @@ int main(){
     datao.close();
     Trgovina a;
     a.vpis();
+```
 
     return 0;
 }
