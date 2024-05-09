@@ -1,3 +1,4 @@
+```cpp
 #include <iostream>
 #include <fstream>
 #include <string.h>
@@ -307,3 +308,4 @@ int main(){
 
     return 0;
 }
+```
