@@ -14,7 +14,7 @@ for(mpa<int>::iterator it=slovar){
     cout << it->first << it->second;
 }
 
-
+```
 
 ```cpp
     for(auto i : Count){
