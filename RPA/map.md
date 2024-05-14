@@ -1,4 +1,22 @@
 ```cpp
+#include <map>
+
+map<key, value> ime_map;
+    cout << it->first;
+    cout << (*it).first;
+
+map<int,int> Slovar;
+Slovar[5] = 3;
+Slovar[54] = 7;
+
+for(mpa<int>::iterator it=slovar){
+    cout << *it;
+    cout << it->first << it->second;
+}
+
+
+
+```cpp
     for(auto i : Count){
         cout << i.first << i.second << endl;
         strcpy(p.ime_pokrajine, i.first.c_str());
