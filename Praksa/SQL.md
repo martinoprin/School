@@ -1,4 +1,5 @@
 <H1>SQL</H1>
+
 ```sql
 SELECT - extracts data from a database
 UPDATE - updates data in a database
