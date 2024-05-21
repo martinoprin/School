@@ -25,5 +25,21 @@ FROM Customers
 WHERE NOT Country = 'Spain' AND CustomerName NOT LIKE 'G%';
 
 SELECT * FROM Customers
-WHERE City NOT IN ('Paris', 'London');
+WHERE City NOT IN ('Paris', 'London') AND Address IS NULL;;
+```
+INSERT INTO
+```sql
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+```
+UPDATE
+```sql
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+```
+DELETE
+```sql
+DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+DROP TABLE Customers;
 ```
