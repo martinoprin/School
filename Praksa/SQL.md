@@ -1,3 +1,6 @@
+https://github.com/martinoprin/School/blob/fe4374c99201da28228543d3fb317ff04d548f88/Praksa/SQL.md?plain=1#L66
+<a href="(https://github.com/martinoprin/School/blob/fe4374c99201da28228543d3fb317ff04d548f88/Praksa/SQL.md?plain=1#L66)">Hello World</a></li>
+
 ```sql
 SELECT - extracts data from a database
 UPDATE - updates data in a database
