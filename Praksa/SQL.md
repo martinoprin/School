@@ -11,6 +11,7 @@ DROP TABLE - deletes a table
 CREATE INDEX - creates an index (search key)
 DROP INDEX - deletes an index
 ```
+```sql
 SELECT * FROM Customers;
 SELECT DISTINCT Country FROM Customers;
 SELECT COUNT(DISTINCT Country) FROM Customers;
@@ -21,4 +22,8 @@ ORDER BY Price ASC/DESC;  //ASC/DESC(OPTIONAL)
 
 SELECT *
 FROM Customers
-WHERE NOT Country = 'Spain' AND CustomerName LIKE 'G%';
+WHERE NOT Country = 'Spain' AND CustomerName NOT LIKE 'G%';
+
+SELECT * FROM Customers
+WHERE City NOT IN ('Paris', 'London');
+```
