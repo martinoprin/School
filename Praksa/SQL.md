@@ -77,7 +77,8 @@ CREATE TABLE Persons (
     LastName varchar(255),
     FirstName varchar(255),
     Address varchar(255),
-    City varchar(255)
+    City varchar(255),
+    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
 );
 
 ALTER TABLE Customers
@@ -88,4 +89,68 @@ DROP COLUMN Email;
 
 ALTER TABLE table_name
 RENAME COLUMN old_name to new_name;
+
+ALTER TABLE Persons
+MODIFY Age int NOT NULL;
+```
+
+```sql
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+
+//check
+ALTER TABLE Persons
+ADD CHECK (Age>=18);
+
+ALTER TABLE Persons
+DROP CONSTRAINT CHK_PersonAge;
+
+//default
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+);
+
+CREATE TABLE Orders (
+    ID int NOT NULL,
+    OrderNumber int NOT NULL,
+    OrderDate date DEFAULT GETDATE()
+);
+
+ALTER TABLE Persons
+ALTER City SET DEFAULT 'Sandnes';
+
+ALTER TABLE Persons
+ALTER City DROP DEFAULT;
+
+//auto_increment
+CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
 ```
