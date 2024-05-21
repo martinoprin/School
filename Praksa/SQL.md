@@ -24,6 +24,7 @@ SELECT COUNT(DISTINCT Country) FROM Customers;
 
 SELECT * FROM Customers
 WHERE Country='Mexico' AND CustomerID > 80
+GROUP BY column_name(s)
 ORDER BY Price ASC/DESC;  //ASC/DESC(OPTIONAL)  
 
 SELECT *
@@ -31,7 +32,13 @@ FROM Customers
 WHERE NOT Country = 'Spain' AND CustomerName NOT LIKE 'G%';
 
 SELECT * FROM Customers
-WHERE City NOT IN ('Paris', 'London') AND Address IS NULL;;
+WHERE City NOT IN ('Paris', 'London') AND Address IS NULL;
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5
+ORDER BY COUNT(CustomerID) DESC;
 ```
 INSERT INTO
 ```sql
@@ -48,4 +55,35 @@ DELETE
 ```sql
 DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 DROP TABLE Customers;
+```
+INNER JOIN
+```sql
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+```
+
+<h2>DATABASE</h2>
+
+```sql
+DROP DATABASE testDB;
+TRUNCATE TABLE table_name; //delete the data inside a table
+CREATE DATABASE testDB;
+
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+ALTER TABLE table_name
+RENAME COLUMN old_name to new_name;
 ```
