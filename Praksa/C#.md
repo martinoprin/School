@@ -168,4 +168,8 @@ class Program
         person.Introduce();
     }
 }
+
+           string vpis = Console.ReadLine();
+            Console.WriteLine$("Ime ti je {vpis}");
+
 ```
