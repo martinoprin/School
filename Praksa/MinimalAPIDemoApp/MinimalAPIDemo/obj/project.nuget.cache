@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dJDk5pKw8L1JszobuDh4HzyKF9dIXwnwPjE/5/sxaKkwqLFRgHEthgW5ZwkTYmrLrrsyHkznWi7+alT2qNZmOw==",
+  "dgSpecHash": "FDrgifX/YHsoSjn/xBD2lUcRo489DYwH+xBPHR9qD8KP0vIXdvjzxO+oW/SwbZ7kdQASmVE562iYtbd5XSCvUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\prakinfo\\Desktop\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
+  "projectFilePath": "C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\prakinfo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\prakinfo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

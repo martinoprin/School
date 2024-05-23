@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prakinfo\\Desktop\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
+      "projectUniqueName": "C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
       "projectName": "MinimalAPIDemo",
-      "projectPath": "C:\\Users\\prakinfo\\Desktop\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
+      "projectPath": "C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\MinimalAPIDemoApp\\MinimalAPIDemo\\MinimalAPIDemo.csproj",
       "packagesPath": "C:\\Users\\prakinfo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prakinfo\\Desktop\\MinimalAPIDemoApp\\MinimalAPIDemo\\obj\\",
+      "outputPath": "C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\MinimalAPIDemoApp\\MinimalAPIDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\prakinfo\\AppData\\Roaming\\NuGet\\NuGet.Config",
