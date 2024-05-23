@@ -1,6 +1,7 @@
 ﻿using System;
 using ConsoleApp1;
 using PravokotnikApp;
+using BinaryApp;
 
 class Hello
 {
@@ -47,6 +48,14 @@ class Hello
             //Console.WriteLine($"{arr[i-1]}");
             //Console.WriteLine($"{i}");
         }
+
+        Obcina obcina = new Obcina();
+
+       // obcina.vpis("neki");
+        string read = obcina.izpis();
+        Console.WriteLine(read);
+
+       
     }
 }
 
