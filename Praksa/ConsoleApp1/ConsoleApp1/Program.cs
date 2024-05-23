@@ -51,10 +51,10 @@ class Hello
 
         Obcina obcina = new Obcina();
 
-       // obcina.vpis("neki");
-        string read = obcina.izpis();
-        Console.WriteLine(read);
-
+        //obcina.vpis("neki");
+        //string read = obcina.izpis();
+        //Console.WriteLine(read);
+        obcina.binaryvpis("C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\ConsoleApp1\\Obcina.bin");
        
     }
 }
