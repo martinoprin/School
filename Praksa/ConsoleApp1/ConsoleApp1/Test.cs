@@ -19,23 +19,35 @@ namespace BinaryApp
             return File.ReadAllText("C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\ConsoleApp1\\filename.txt");  // Read the contents of the file
         }
 
-        string authorName = "Mahesh Chand";
-        int age = 30;
-        string bookTitle = "ADO.NET Programming using C#";
-        bool mvp = true;
-        double price = 54.99;
-
         public void binaryvpis(string fileName)
         {
-            using (BinaryWriter binWriter = new BinaryWriter(File.Open(fileName, FileMode.Create)))
+            string ime = Console.ReadLine();
+            int starost = Convert.ToInt32(Console.ReadLine());
+
+            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Write))
             {
-                binWriter.Write(authorName);
-                binWriter.Write(age);
-                binWriter.Write(bookTitle);
-                binWriter.Write(mvp);
-                binWriter.Write(price);
+                fs.Seek(0, SeekOrigin.End);
+                using (BinaryWriter binWriter = new BinaryWriter(fs))
+                {
+                    binWriter.Write(ime);
+                    binWriter.Write(starost);
+                }
             }
         }
-        
+        public void ReadBookData(string fileName)
+        {
+            using (BinaryReader binReader = new BinaryReader(File.Open(fileName, FileMode.Open)))
+            {
+                while (binReader.BaseStream.Position != binReader.BaseStream.Length)
+                {
+                    string ime = binReader.ReadString();
+                    int age = binReader.ReadInt32();
+
+                    // Display the read data
+                    Console.WriteLine($"Data read from binary file: {ime} {age}");
+                }
+            }
+        }
+
     }
 }

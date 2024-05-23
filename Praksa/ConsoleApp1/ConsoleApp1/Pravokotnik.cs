@@ -23,11 +23,11 @@ namespace PravokotnikApp
         }
         public void vpis()
         {
-            Console.Write("Vpisi x: ");
+            //Console.Write("Vpisi x: ");
             string input = Console.ReadLine();
             x = Convert.ToInt32(input);
 
-            Console.Write("Vpisi y: ");
+            //Console.Write("Vpisi y: ");
             //input = Console.ReadLine();
             //y = Convert.ToInt32(input);
             y = Convert.ToInt32(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace PravokotnikApp
         }
         public void izpis()
         {
-            Console.WriteLine(x);
+            //Console.WriteLine(x);
         }
     }
 }

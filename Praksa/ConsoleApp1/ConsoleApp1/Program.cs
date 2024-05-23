@@ -55,7 +55,7 @@ class Hello
         //string read = obcina.izpis();
         //Console.WriteLine(read);
         obcina.binaryvpis("C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\ConsoleApp1\\Obcina.bin");
-       
+        obcina.ReadBookData("C:\\Users\\prakinfo\\Desktop\\School\\Praksa\\ConsoleApp1\\Obcina.bin");
     }
 }
 
