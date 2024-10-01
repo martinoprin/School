@@ -31,6 +31,6 @@ p.center { //<p> elements with class="center"
   color: blue;
 }
 ```
-
+```html
 <p class="center large">This paragraph refers to two classes.</p>
 ```
