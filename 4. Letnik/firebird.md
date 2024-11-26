@@ -93,3 +93,34 @@ trajanje TIME NOT NULL,
 PRIMARY KEY(cdid,zapst));
 
 ```
+DODAJANJE/BRISANJE ATRIBUTOV
+```sql
+ALTER TABLE  ime_tabele ADD  atribut  tip [omejitve];
+ALTER TABLE  ime_tabele DROP  atribut;
+
+alter table stranka add davSt bigint not null primary key;
+alter table stranka drop ZacasniNaslov;
+
+```
+SPREMINJANJE STOLPCEV
+```sql
+ALTER TABLE ime_tabele  ALTER [COLUMN] ime_atributa sprememba;
+Spremembe:
+    TO novo_ime
+    TYPE novi_tip
+    POSITION nova_pozicija
+alter table stranka alter column priimek type char(50);
+alter table stranka alter column davcnast position 1;
+```
+SPREMINJANJE INTEGRITETNIH OMEJITEV
+```sql
+ALTER TABLE ime_tabele ADD [CONSTRAINT ime_omejitve] opis_omejitve;
+Možne omejitve: PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK
+
+alter table oseba add constraint pk_oseba primary key(emso);
+alter table stranka add constraint ime_nn check (ime is not null) ;
+```
+BRISANJE TABELE
+```sql
+DROP TABLE ime_tabele;
+```
