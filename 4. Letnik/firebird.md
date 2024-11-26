@@ -1,7 +1,7 @@
 cd ../firebird>isql -user sysdba -password masterkey
 CONNECT 'path_to_database.fdb' USER 'username' PASSWORD 'password';
 
-```firebird
+```sql
 create database 'c:\vaje\hoteli.fdb' user 'sysdba' password 'masterkey' default character set ISO8859_2;
 connect 'c:\vaje\hoteli.fdb' user 'sysdba' password 'masterkey‘; 
 
@@ -30,11 +30,48 @@ SHOW DOMAIN domain_name;
 ```
 KREIRANJE DOMENE
 ```sql
+CREATE DOMAIN ime_domene tip_domene
+[DEFAULT literal |NULL |USER]
+[NOT NULL] [CHECK (pogoji)];
+
 CREATE DOMAIN Ocena_univerza INTEGER DEFAULT 1 NOT NULL CHECK (VALUE between 1 and 10);
 CREATE DOMAIN DTelefon char(20)
 CHECK (VALUE like '(0%)%');
 CREATE DOMAIN DSpol CHAR(1) NOT NULL
 CHECK (VALUE IN ('M','Ž'));
 ```
+SPREMINJANJE DOMENE
+```sql
+ALTER DOMAIN { ime | staro_ime TO novo_ime }{
+[SET DEFAULT {literal | NULL | USER | ….}]
+| [DROP DEFAULT]
+| [ADD [CONSTRAINT] CHECK (<pogoji>)]
+| [DROP CONSTRAINT]
+|TYPE tip_domene };
+Primeri:
+ALTER DOMAIN DTip_davka TO Domena_DDV;
+ALTER DOMAIN Dspol SET DEFAULT 'M';
+```
+BRISANJE DOMENE
+```sql
+DROP DOMAIN ime_domene;
+```
+KREIRANJE TABELE
+```sql
+CREATE TABLE ime_tabele (
+Atribut1 tip [omejitve],
+Atribut2 tip [omejitve],
+...
+Primary key (atribut,…)
+Foreign key (atribut,…) references …);
+ Omejitve
+Default vrednost
+NOT NULL
+UNIQUE
+CHECK (pogoj)
+REFERENCES tabela (atribut) ON DELETE akcija ON UPDATE akcija; 
+-- akcija = no action | cascade | set default | set null
+-- z akcijo določimo tip referencialne integritete 
 
+```
 
