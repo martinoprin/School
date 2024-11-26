@@ -64,7 +64,7 @@ Atribut2 tip [omejitve],
 ...
 Primary key (atribut,…)
 Foreign key (atribut,…) references …);
- Omejitve
+--OMEJITVE
 Default vrednost
 NOT NULL
 UNIQUE
@@ -74,4 +74,22 @@ REFERENCES tabela (atribut) ON DELETE akcija ON UPDATE akcija;
 -- z akcijo določimo tip referencialne integritete 
 
 ```
+PRIMER KREIRANJA <br>
+CD(<u>CDID:N</u>, Naslov:A30,Cena:N) <br>
+Posnetek (<u>CDID->CD,ZapSt:N</u>,NaslovPosnetka:C30,Trajanje:D)
 
+```sql
+CREATE TABLE cd (
+cdid INTEGER NOT NULL CHECK (cdid>0),
+naslov CHAR(30) NOT NULL,
+cena DECIMAL(6,2) NOT NULL,
+PRIMARY KEY(cdid));
+
+CREATE TABLE posnetek(
+cdid INTEGER NOT NULL REFERENCES cd(cdid),
+zapst INTEGER NOT NULL CHECK (zapst>0),
+naslovposnetka CHAR(30) NOT NULL,
+trajanje TIME NOT NULL,
+PRIMARY KEY(cdid,zapst));
+
+```
