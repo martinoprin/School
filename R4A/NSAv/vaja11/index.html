@@ -7,15 +7,24 @@
     </title>
 </head>
 <body>
-    <form action="form.php" method="get">
-        <label for="ime">Ime:</label>
-        <input type="text" name="ime" required><br>
-        <label for="priimek">Priimek:</label>
-        <input type="text" name="priimek" required><br>
-        <input type="radio" name="sola" value="Gimnazija" required> Gimnazija
-        <input type="radio" name="sola" value="Strokovna sola" required> Strokovna šola <br>
-        <input type="submit" value="Vnos">
-        <input type="reset" value="Ponastavi">
-    </form>
+
+
+    <div style="position: relative; border: 2px solid black; padding: 20px; width: 30vw;">
+        <span style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background-color: white; padding: 0 5px;">
+          Vnos podatkov
+        </span>
+        <form action="form.php" method="get">
+            <label for="ime">Ime:</label>
+            <input type="text" name="ime" required><br>
+            <label for="priimek">Priimek:</label>
+            <input type="text" name="priimek" required><br>
+            <input type="radio" name="sola" value="Gimnazija" required> Gimnazija
+            <input type="radio" name="sola" value="Strokovna sola" required> Strokovna šola <br>
+            <input type="submit" value="Vnos">
+            <input type="reset" value="Ponastavi">
+        </form>
+      </div>
+      
+      
 </body>
 </html>
