@@ -1,5 +1,6 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+    /*if ($_SERVER["REQUEST_METHOD"] == "GET") {
         function preveri_veliko_zacetnico($beseda) {
             return ucfirst(strtolower($beseda)) == $beseda;
         }
@@ -17,5 +18,6 @@
                 echo "Program: " . (isset($_GET['program']) ? $_GET['program'] : 'Neznan');
             }
         }
-    }
+    }*/
+    var_dump($_GET["ime"]);
     ?>
