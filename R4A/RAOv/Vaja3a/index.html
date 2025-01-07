@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vaja 3c</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <h1 id="myh1">Welcome</h1>
+        <div class="paragraph" id="paragraph">
+        <p>Čebelica že šviga. The iPhone is a line of smartphones developed and marketed by Apple that use the company's own iOS mobile operating system. The first-generation iPhone was announced by then–Apple CEO Steve Jobs on January 9, 2007. Since then, Apple has annually released new iPhone models and iOS versions. As of January 1, 2024, more than 2.3 billion iPhones have been sold, making Apple the largest vendor of mobile phones in 2023.
+
+            The iPhone was the first mobile phone to use multi-touch technology. Since the first-generation iPhone's launch, it has gained larger screen sizes, video-recording, waterproofing, and many accessibility features. Up to the iPhone 8 and 8 Plus, iPhones had a single button on the front panel, with the iPhone 5s and later integrating a Touch ID fingerprint sensor. Since the iPhone X, iPhone models have switched to a nearly bezel-less front screen design with Face ID facial recognition in place of Touch ID for authentication, and increased use of gestures in place of the home button for navigation.[note 2]
+            
+            The iPhone, which operates using Apple's proprietary iOS software, is one of the two major smartphone platforms in the world, alongside Android. The first-generation iPhone was described by Steve Jobs as a "revolution" for the mobile phone industry. The iPhone has been credited with popularizing the smartphone and slate form factor, and with creating a large market for smartphone apps, or "app economy", laying the foundation for the boom of the market for mobile devices. As of August 2024, Apple's App Store contains nearly 2 million applications.</p>
+        </div>
+        <div id="dolzina_besedila"></div>
+        <div class="gumbi">
+            <button onclick="osnovno()">Osnovno besedilo</button>
+            <button onclick="izracunaj_dolzino()">Dolžina besedila</button>
+            <button onclick="skrajsaj()">Skrajšaj besedilo</button>
+            <button onclick="obrni()">Obnrni besedilo</button>
+            <button onclick="sumniki()">Zamenjaj šumnike</button>
+            <button onclick="generirajLeto()">Generiraj Leto</button>
+        </div>
+        <div id="letoOkvir">Tukaj bo prikazano leto</div>
+
+        <script>
+            let ime = prompt("Pozdravljen! Kako ti je ime?");
+
+     
+            document.getElementById("myh1").innerHTML = ("Pozdravljen " + ime + "!").toUpperCase();
+
+
+            let heading = document.getElementById("myh1");
+            let besedilo = document.querySelector("p");
+            let besedilo_os = besedilo.innerText;
+
+
+            function osnovno() {
+                besedilo.innerText = besedilo_os;
+            }
+            function izracunaj_dolzino() {
+
+                if (document.getElementById("dolzina_besedila").innerHTML === "") {
+                    document.getElementById("dolzina_besedila").innerHTML = "Zgornji opis je dolg "+ besedilo.innerText.length + " znakov.";
+                } else {
+                    document.getElementById("dolzina_besedila").innerHTML = "";
+            }
+            }
+            function skrajsaj() {
+                besedilo.innerText = besedilo.innerText.slice(0,160);
+            }
+            function obrni() {
+                let niz = besedilo.innerText.split("");
+                let obrnjeno = niz.reverse().join("");
+                besedilo.innerText = obrnjeno;
+            }
+            function sumniki() {
+                let brez_sumnikov = besedilo.innerText.replace(/č/gi, "c").replace(/š/gi, "s").replace(/ž/gi, "z");
+                besedilo.innerText = brez_sumnikov;
+            }
+            function generirajLeto() {
+                let leto = Math.floor(Math.random() * 10000);
+                let prestopno = (leto % 4 === 0 && leto % 100 !== 0) || leto % 400 === 0;
+
+                if (prestopno) {
+                    document.getElementById("letoOkvir").innerText = "Leto " + leto + " je prestopno leto.";
+                }
+                else {
+                    document.getElementById("letoOkvir").innerText = "Leto " + leto + " ni prestopno leto.";
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

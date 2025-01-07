@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opravki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Opravki</h1>
+        
+        <form id="task-form">
+            <label for="title">Naslov opravka:</label>
+            <input type="text" id="title" required>
+        
+            <label for="description">Opis opravka:</label>
+            <textarea id="description" required></textarea>
+        
+            <label for="priority">Prioriteta:</label>
+            <select id="priority">
+                <option value="low">Nizka</option>
+                <option value="medium">Srednja</option>
+                <option value="high">Visoka</option>
+            </select>
+        
+            <label for="due-date">Rok:</label>
+            <input type="date" id="due-date">
+        
+            <button type="submit">Dodaj opravke</button>
+        </form>
+        
+
+        <div id="task-list"></div>
+
+        <div id="stats"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

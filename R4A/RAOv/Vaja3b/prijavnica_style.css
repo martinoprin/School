@@ -1,0 +1,76 @@
+* {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(58, 58, 58);
+}
+
+.container {
+    text-align: center;
+}
+
+.form-section {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin: 30px auto;
+    padding: 20px;
+    letter-spacing: 3px;
+    border: 1 px solid rgb(221, 221, 221);
+    background-color: rgb(91, 91, 91);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+    max-width: 500px; 
+}
+
+.form-section .head {
+    font-size: 28px;
+    background-color: rgb(104, 104, 104);
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #199bff;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 52px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    color: #199bff;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    color: #ff6828;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.form-section input[type="text"] {
+    background-color: rgb(99, 99, 99); 
+    color: rgb(255, 255, 255); 
+    text-align: center;
+    border: 1px solid #acacac;
+    padding: 8px;
+    border-radius: 5px; 
+    font-size: 16px; 
+    width: calc(100% - 60px);
+}
+
+.gumb {
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 20px;
+}

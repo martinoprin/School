@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+div {
+    margin: 10px;
+}
+
+.Ikea div {
+    display: table;
+}
+
+.kvadrat {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    float: left;
+    animation: kvadrat 1s ease infinite;
+
+}
+
+.krog {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: black;
+    float: left;
+    background: linear-gradient(to right, red 50%, blue 50%);
+    animation: krog 1s linear infinite;
+}
+
+.gumb {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(0, 162, 255);
+    transition: 1s ease;
+    float: left;
+}
+
+.gumb:hover {
+    animation: gumb 1s ease forwards;
+}
+
+@keyframes gumb {
+    0% {
+        width: 100px;
+        height: 30px;
+    }
+    100% {
+        width: 150px;
+        height: 45px;
+        background-color: blue;
+    }
+}
+
+@keyframes kvadrat {
+
+    50% {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes krog {
+
+    100% {
+        transform: rotate(360deg);
+    }
+    
+}

@@ -1,0 +1,27 @@
+body {
+    background-color: #0a1128;
+}
+
+.circle {
+    position: absolute;
+    height: 20rem;
+    width: 20rem;
+    background-color: #A604F2;
+    border-radius: 50%;
+    filter: blur(10rem);
+    opacity: 0.5;
+}
+
+#c1{
+    background-color: #A604F2;
+    top: 50%;
+    left: 80%; 
+}
+#c2{
+    background-color: #763AF5;
+    top: 60%;
+    left: 10%; 
+}
+#c3{
+    background-color: #00CCFF;
+}
