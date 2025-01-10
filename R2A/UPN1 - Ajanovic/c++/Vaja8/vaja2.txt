@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int tmp = n;
+    int presledek = 0;
+    for(int j = 0; j<n; j++){
+        for(int i = 0; i<tmp; i++){
+            cout << '*';
+        }
+        tmp -= 1;
+        cout << endl;
+    }
+    tmp += 1;
+    for(int j = 0; j<n; j++){
+        for(int i = 0; i<tmp; i++){
+            cout << '*';
+        }
+        tmp += 1;
+        cout << endl;
+    }
+    tmp = n;
+
+    for(int j=0;j<n;j++){
+        
+        for(int k = 0; k<presledek; k++){
+            cout << ' ';
+        }
+        for(int i = 0; i<tmp; i++){
+            cout << '*';
+        }
+        tmp -= 1;
+        presledek += 1;
+        cout << endl;
+    }
+    tmp += 1;
+    presledek -= 1;
+    for(int j=0;j<n;j++){
+        
+        for(int k = 0; k<presledek; k++){
+            cout << ' ';
+        }
+        for(int i = 0; i<tmp; i++){
+            cout << '*';
+        }
+        tmp += 1;
+        presledek -= 1;
+        cout << endl;
+    }
+    return 0;
+}

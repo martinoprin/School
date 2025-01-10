@@ -1,0 +1,67 @@
+body {
+    background-color: lightblue;
+    font-family: Arial;
+    font-size: 11pt;
+}
+h1 {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    font-size: 20pt;
+    color: red;
+    text-decoration: underline;
+    text-align: center;
+}
+h2{
+    font-family: arial;
+    color: blue;
+    font-size: 18pt;
+    font-weight: bold;
+}
+ul{
+    list-style-type: square;
+    border: 1px solid black;
+    padding: 20pt;
+}
+ol{
+    list-style-type: lower-roman;
+    margin-left: 4cm;
+}
+a{
+    color: blue;
+    text-decoration: none;
+}
+img{
+    border: none;
+    float: right;
+}
+dt{
+    color: red;
+    font-weight: bold;
+    font-size: 18pt;
+}
+dd{
+    background-color: yellow;
+    font-style: italic;
+    width: 10cm;
+    border: 1px solid black;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+table {
+    border: 3px solid black;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center; 
+    vertical-align: middle; 
+  }
+th {
+    background-color: blue;
+    color: white;
+    font-weight: bold; 
+    font-family: 'Times New Roman';
+}
+td {
+    background-color: red; 
+    color: yellow; 
+  }

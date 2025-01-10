@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elliptical Path</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* Align to the bottom */
+      overflow: hidden;
+    }
+
+    .sun {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background-color: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 35px 5px yellow, 0 0 25px 10px yellow inset;
+    }
+
+    /* Animation for the sun's path */
+    @keyframes moveAlongPath {
+      from {
+        transform: translate(-50%, 0) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, 0) rotate(360deg);
+      }
+    }
+
+    .moving-sun {
+      animation: moveAlongPath 10s linear infinite; /* 10s duration, infinitely looping */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sun moving-sun"></div>
+  </div>
+
+  <script>
+    const sun = document.querySelector('.sun');
+    const container = document.querySelector('.container');
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
+    // Center the path at the bottom middle of the container
+    const centerX = containerWidth / 2;
+    const centerY = containerHeight * 0.8; // Bottom middle
+
+    // Elliptical path parameters
+    const ellipseRadiusX = 300; // Horizontal radius (semi-major axis)
+    const ellipseRadiusY = 100; // Vertical radius (semi-minor axis)
+
+    // Adjust the element's position in the elliptical path
+    let angle = 0;
+
+    function moveSun() {
+      // Calculate the new position using the elliptical path equation
+      const x = centerX + ellipseRadiusX * Math.cos(angle);
+      const y = centerY - ellipseRadiusY * Math.sin(angle);
+
+      sun.style.left = `${x}px`;
+      sun.style.top = `${y}px`;
+
+      angle += 0.01; // Increment the angle to move along the path
+      if (angle >= Math.PI * 2) {
+        angle = 0; // Reset the angle for a continuous loop
+      }
+    }
+
+    // Move the sun every 10ms for smooth animation
+    setInterval(moveSun, 10);
+  </script>
+</body>
+</html>

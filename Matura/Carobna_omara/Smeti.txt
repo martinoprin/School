@@ -1,0 +1,224 @@
+/*#include <WiFi.h>
+#include <WebServer.h>
+
+const char* ssid = "A1-home";
+const char* password = "bedno2020";
+
+WebServer server(80);
+
+void handleRoot() {
+    server.send(200, "text/plain", "Hello from ESP32!");
+}
+
+void setup() {
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nWiFi connected.");
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+
+    server.on("/", handleRoot);
+    server.begin();
+    Serial.println("HTTP server started.");
+}
+
+void loop() {
+    server.handleClient();
+}
+*/
+
+
+
+
+
+
+#include <WiFi.h>
+#include <WebServer.h>
+#include <FastLED.h>
+
+// Wi-Fi credentials
+const char* ssid = "DESKTOP-Martin";
+const char* password = "audijenajaci";
+
+// WebServer object on port 80
+WebServer server(80);
+
+// LED strip configuration
+#define LED_PIN     5        // Pin to which the data line of the LED strip is connected
+#define LED_COUNT   144       // Number of LEDs in the strip
+#define LED_TYPE    WS2812   // LED type (WS2812 or other compatible types)
+#define COLOR_ORDER GRB     // Color order for WS2812 LEDs (could be RGB, GRB, etc.)
+CRGB leds[LED_COUNT];       // Array to hold the LED colors
+
+// Web routes
+void handleRoot() {
+    String html = "<h1>ESP32 WS2812 LED Control</h1>";
+    html += "<p><a href=\"/led/on\">Turn LED ON</a></p>";
+    html += "<p><a href=\"/led/off\">Turn LED OFF</a></p>";
+    html += "<p><a href=\"/led/red\">Turn LED Red</a></p>";
+    html += "<p><a href=\"/led/green\">Turn LED Green</a></p>";
+    html += "<p><a href=\"/led/blue\">Turn LED Blue</a></p>";
+    server.send(200, "text/html", html);
+}
+
+// Turn the LED strip on (set color to white)
+void handleLedOn() {
+    fill_solid(leds, LED_COUNT, CRGB::White);  // Set all LEDs to white
+    FastLED.show();
+    server.send(200, "text/plain", "LED Strip is ON");
+}
+
+// Turn the LED strip off (set all pixels to off)
+void handleLedOff() {
+    fill_solid(leds, LED_COUNT, CRGB::Black);  // Turn off all LEDs
+    FastLED.show();
+    server.send(200, "text/plain", "LED Strip is OFF");
+}
+
+// Change LED strip color to red
+void handleLedRed() {
+    fill_solid(leds, LED_COUNT, CRGB::Red);   // Set all LEDs to red
+    FastLED.show();
+    server.send(200, "text/plain", "LED Strip is Red");
+}
+
+// Change LED strip color to green
+void handleLedGreen() {
+    fill_solid(leds, LED_COUNT, CRGB::Green); // Set all LEDs to green
+    FastLED.show();
+    server.send(200, "text/plain", "LED Strip is Green");
+}
+
+// Change LED strip color to blue
+void handleLedBlue() {
+    fill_solid(leds, LED_COUNT, CRGB::Blue);  // Set all LEDs to blue
+    FastLED.show();
+    server.send(200, "text/plain", "LED Strip is Blue");
+}
+
+void setup() {
+    Serial.begin(115200);
+
+    // Initialize FastLED
+    FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, LED_COUNT);
+    FastLED.setBrightness(255);  // Maximum brightness (0-255)
+
+    // Connect to Wi-Fi
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("\nWi-Fi connected.");
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+
+    // Define server routes
+    server.on("/", handleRoot);        // Home page
+    server.on("/led/on", handleLedOn);  // Turn LED ON
+    server.on("/led/off", handleLedOff); // Turn LED OFF
+    server.on("/led/red", handleLedRed); // Turn LED Red
+    server.on("/led/green", handleLedGreen); // Turn LED Green
+    server.on("/led/blue", handleLedBlue); // Turn LED Blue
+
+    server.begin(); // Start the server
+    Serial.println("HTTP server started.");
+}
+
+void loop() {
+    server.handleClient(); // Handle incoming client requests
+}
+/*
+#include <WiFi.h>
+#include <WebServer.h>
+#include <FastLED.h>
+
+// Wi-Fi credentials
+const char* ssid = "A1-home";
+const char* password = "bedno2020";
+
+// WebServer object
+WebServer server(80);
+
+// LED strip configuration
+#define LED_PIN     5
+#define LED_COUNT   144
+#define LED_TYPE    WS2812
+#define COLOR_ORDER GRB
+CRGB leds[LED_COUNT];
+
+// Variables to store LED status
+bool ledStatus = false;  // false = OFF, true = ON
+
+// HTTP route to serve the control page
+void handleRoot() {
+    String html = "<html><head><title>ESP32 LED Control</title></head><body>";
+    html += "<h1>ESP32 LED Control</h1>";
+    html += "<button onclick='turnOnLED()'>Turn ON LED</button><br>";
+    html += "<button onclick='turnOffLED()'>Turn OFF LED</button><br>";
+    html += "<div id='status'></div>";
+    html += "<script>";
+    html += "function updateStatus(message) { document.getElementById('status').innerText = message; }";
+    html += "function turnOnLED() { fetch('/led/on').then(response => response.text()).then(updateStatus); }";
+    html += "function turnOffLED() { fetch('/led/off').then(response => response.text()).then(updateStatus); }";
+    html += "</script>";
+    html += "</body></html>";
+
+    server.send(200, "text/html", html);
+}
+
+// HTTP route to get LED status
+void handleStatus() {
+    String status = ledStatus ? "LED is ON" : "LED is OFF";
+    server.send(200, "text/plain", status);
+}
+
+// LED control routes
+void handleLedOn() {
+    fill_solid(leds, LED_COUNT, CRGB::White);
+    FastLED.show();
+    ledStatus = true;  // Set LED status to ON
+    server.send(200, "text/plain", "LED ON");
+}
+
+void handleLedOff() {
+    fill_solid(leds, LED_COUNT, CRGB::Black);
+    FastLED.show();
+    ledStatus = false;  // Set LED status to OFF
+    server.send(200, "text/plain", "LED OFF");
+}
+
+void setup() {
+    Serial.begin(115200);
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+    }
+
+    Serial.println("\nWi-Fi connected.");
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+
+    FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, LED_COUNT);
+    FastLED.setBrightness(255);
+
+    // Setup routes
+    server.on("/", handleRoot);
+    server.on("/status", handleStatus);   // Route to get the LED status
+    server.on("/led/on", handleLedOn);
+    server.on("/led/off", handleLedOff);
+
+    server.begin();
+    Serial.println("HTTP server started.");
+}
+
+void loop() {
+    server.handleClient();
+}
+*/

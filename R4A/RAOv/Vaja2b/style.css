@@ -1,0 +1,67 @@
+
+body {
+    margin: 5%;
+}
+
+p {
+    font-size: 12pt;
+    font-family: 'Open Sans';
+}
+
+h1 {
+    font-size: 18pt;
+    font-family: 'Lato';
+}
+
+.slika-objava {
+    border-radius: 2.5%;
+    width: auto;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.profilna-slika {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    float: left;
+    margin-right: 10px;
+}
+
+.ime {
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.handel, .timestamp {
+    font-family: Arial, sans-serif;
+    color: #657786;
+}
+
+.objava-content {
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.gumbi {
+    padding-top: 10px;
+    height: 20px;
+    display: flex;
+    gap: 100px;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+hr.no-margin {
+    margin: 0 !important;
+}
+
+div.objava{
+
+}

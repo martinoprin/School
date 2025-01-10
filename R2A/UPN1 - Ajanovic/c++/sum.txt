@@ -1,0 +1,21 @@
+// * IMPORTANT INFORMATION
+// ! WARNING
+// ? QUESTION
+// TODO 
+
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+
+    int n;
+    int sum;
+    while(n != 0){
+    cin >> n;
+    sum += n;
+    }
+    cout << sum;
+    system("pause"); // Počaka na input, da se konzola ne zapre takoj!
+    return 0;
+}

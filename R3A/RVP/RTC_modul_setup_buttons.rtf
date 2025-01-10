@@ -1,0 +1,219 @@
+{\rtf1\ansi\ansicpg1250\deff0\nouicompat\deflang1060{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl240\slmult1\f0\fs22\lang9 #include <virtuabotixRTC.h>\par
+\par
+virtuabotixRTC myRTC(6, 7, 8);\par
+const int digitPins[4] = \{B11101111,B11010000,B10111111,B01111111\};              \par
+ \par
+const int clockPin = 11;    //74HC595 Pin 11\par
+const int latchPin = 12;    //74HC595 Pin 12\par
+const int dataPin = 13;     //74HC595 Pin 14\par
+const int set12 = 3;\par
+const int up = 4;\par
+const int down = 5;\par
+const int set34 = 9;\par
+const byte digit[10] =      //seven segment digits in bits\par
+\{\par
+  B01111110, //0\par
+  B00001100, //1\par
+  B10110110, //2\par
+  B10011110, //3\par
+  B11001100, //4\par
+  B11011010, //5\par
+  B11111010, //6\par
+  B00001110, //7\par
+  B11111110, //8\par
+  B11011110  //9\par
+\};\par
+int digitBuffer[4] = \{0\};\par
+int digitScan=0;\par
+int displTime=4000;\par
+\par
+void setup()\{\par
+  //myRTC.setDS1302Time(00, 14, 13, 6, 2, 3, 2024);\par
+  //myRTC.setDS1302Time(sekunde, minute, ure, dan v tednu, dan v mesecu, mesec, leto);\par
+  //Serial.begin(9600);\par
+  pinMode(latchPin, OUTPUT);\par
+  pinMode(clockPin, OUTPUT);\par
+  pinMode(dataPin, OUTPUT);\par
+  pinMode(set12, INPUT_PULLUP);\par
+  pinMode(set34, INPUT_PULLUP);\par
+  pinMode(up, INPUT_PULLUP);\par
+  pinMode(down, INPUT_PULLUP);  \par
+\}\par
+ \par
+//writes the temperature on display\par
+void updateDisp(bool year, bool date)\{\par
+ \par
+  digitalWrite(latchPin, LOW);    \par
+    shiftOut(dataPin, clockPin, MSBFIRST, digitPins[digitScan]);\par
+    if(digitScan==1 && year)\{\par
+      shiftOut(dataPin, clockPin, MSBFIRST, (digit[digitBuffer[digitScan]]|B00000001));\par
+      \}\par
+    else\par
+    if (digitScan==3 && date)\par
+    shiftOut(dataPin, clockPin, MSBFIRST, digit[digitBuffer[digitScan]]|B00000001);\par
+    else\par
+    shiftOut(dataPin, clockPin, MSBFIRST, digit[digitBuffer[digitScan]]);\par
+    digitalWrite(latchPin, HIGH);\par
+    digitScan++;\par
+  if(digitScan>3) digitScan=0;\par
+\}\par
+\par
+\par
+ \par
+void loop()\{\par
+  long startTime = millis();\par
+  long endTime = startTime;\par
+  \par
+  while(endTime-startTime <=displTime)\{\par
+  myRTC.updateTime();\par
+\par
+    digitBuffer[0] = myRTC.dayofmonth/10;\par
+    digitBuffer[1] = (myRTC.dayofmonth%10);\par
+    digitBuffer[2] = (myRTC.month/10);\par
+    digitBuffer[3] = (myRTC.month%10);\par
+    \par
+    while(digitalRead(set12)==LOW)\{\par
+      if(digitalRead(up)==LOW)\{\par
+        delay(300);\par
+        myRTC.dayofmonth=myRTC.dayofmonth+1;\par
+        //Serial.println(myRTC.dayofmonth);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = myRTC.dayofmonth/10;\par
+        digitBuffer[1] = myRTC.dayofmonth%10;\par
+      \}\par
+      if(digitalRead(down)==LOW)\{\par
+        delay(300);\par
+        myRTC.dayofmonth=myRTC.dayofmonth-1;\par
+        //Serial.println(myRTC.dayofmonth);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = myRTC.dayofmonth/10;\par
+        digitBuffer[1] = myRTC.dayofmonth%10;\par
+      \}\par
+      updateDisp(true, true);\par
+      delay(1);\par
+    \}\par
+\par
+    while(digitalRead(set34)==LOW)\{\par
+      if(digitalRead(up)==LOW)\{\par
+        delay(300);\par
+        myRTC.month=myRTC.month+1;\par
+        //Serial.println(myRTC.month);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[2] = myRTC.month/10;\par
+        digitBuffer[3] = myRTC.month%10;\par
+      \}\par
+      if(digitalRead(down)==LOW)\{\par
+        delay(300);\par
+        myRTC.month=myRTC.month-1;\par
+        //Serial.println(myRTC.month);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[2] = myRTC.month/10;\par
+        digitBuffer[3] = myRTC.month%10;\par
+      \}\par
+      updateDisp(true, true);\par
+      delay(1);\par
+    \}\par
+    updateDisp(true, true);\par
+    delay(1);\par
+    endTime=millis();\par
+  \}\par
+\par
+  startTime = millis();\par
+  endTime=startTime;\par
+  while(endTime - startTime <=displTime)\{\par
+     myRTC.updateTime();\par
+    digitBuffer[0] = myRTC.hours/10;\par
+    digitBuffer[1] = (myRTC.hours%10);\par
+    digitBuffer[2] = (myRTC.minutes/10);\par
+    digitBuffer[3] = (myRTC.minutes%10);\par
+    \par
+    while(digitalRead(set12)==LOW)\{\par
+      if(digitalRead(up)==LOW)\{\par
+        delay(300);\par
+        myRTC.hours=myRTC.hours+1;\par
+        //Serial.println(myRTC.hours);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = myRTC.hours/10;\par
+        digitBuffer[1] = myRTC.hours%10;\par
+      \}\par
+      if(digitalRead(down)==LOW)\{\par
+        delay(300);\par
+        myRTC.hours=myRTC.hours-1;\par
+        //Serial.println(myRTC.hours);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = myRTC.hours/10;\par
+        digitBuffer[1] = myRTC.hours%10;\par
+      \}\par
+      updateDisp(true, false);\par
+      delay(1);\par
+    \}\par
+\par
+    while(digitalRead(set34)==LOW)\{\par
+      if(digitalRead(up)==LOW)\{\par
+        delay(300);\par
+        myRTC.minutes=myRTC.minutes+1;\par
+        //Serial.println(myRTC.minutes);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[2] = myRTC.minutes/10;\par
+        digitBuffer[3] = myRTC.minutes%10;\par
+      \}\par
+      if(digitalRead(down)==LOW)\{\par
+        delay(300);\par
+        myRTC.minutes=myRTC.minutes-1;\par
+        //Serial.println(myRTC.minutes);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[2] = myRTC.minutes/10;\par
+        digitBuffer[3] = myRTC.minutes%10;\par
+      \}\par
+      updateDisp(true, false);\par
+      delay(1);\par
+    \}\par
+    updateDisp(true, false);\par
+    delay(1);\par
+    endTime=millis();\par
+  \}\par
+\par
+startTime = millis();\par
+  endTime=startTime;\par
+  while((endTime - startTime)<=displTime)\par
+  \{\par
+  myRTC.updateTime();\par
+ \par
+  digitBuffer[0] = (int) myRTC.year/1000;\par
+  digitBuffer[1] = ((int) myRTC.year/100)%10;\par
+  digitBuffer[2] = ((int) myRTC.year/10)%10;\par
+  digitBuffer[3] = (int) myRTC.year%10;\par
+\par
+    while(digitalRead(set34)==LOW)\{\par
+      if(digitalRead(up)==LOW)\{\par
+        delay(300);\par
+        myRTC.year=myRTC.year+1;\par
+        //Serial.println(myRTC.year);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = (int) myRTC.year/1000;\par
+        digitBuffer[1] = ((int) myRTC.year/100)%10;\par
+        digitBuffer[2] = ((int) myRTC.year/10)%10;\par
+        digitBuffer[3] = (int) myRTC.year%10;\par
+      \}\par
+      if(digitalRead(down)==LOW)\{\par
+        delay(300);\par
+        myRTC.year=myRTC.year-1;\par
+        //Serial.println(myRTC.year);\par
+        myRTC.setDS1302Time(myRTC.seconds, myRTC.minutes, myRTC.hours, myRTC.dayofweek, myRTC.dayofmonth, myRTC.month, myRTC.year);\par
+        digitBuffer[0] = (int) myRTC.year/1000;\par
+        digitBuffer[1] = ((int) myRTC.year/100)%10;\par
+        digitBuffer[2] = ((int) myRTC.year/10)%10;\par
+        digitBuffer[3] = (int) myRTC.year%10;\par
+      \}\par
+      updateDisp(false, false);\par
+      delay(1);\par
+    \}\par
+  updateDisp(false, false);\par
+  delay(1);\par
+  endTime=millis();\par
+  \}\par
+  \}\par
+}
+ 

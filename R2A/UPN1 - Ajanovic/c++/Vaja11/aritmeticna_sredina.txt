@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;              //velikost tabele
+    float sum = 0;
+    cin >> n;
+    float stevila[n];
+    for(int i=0; i<n; i++){
+        cin >> stevila[i];
+        sum = sum + stevila[i];
+    }
+        cout << sum/n;
+        
+    return 0;
+}

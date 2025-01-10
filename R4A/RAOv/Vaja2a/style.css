@@ -1,0 +1,28 @@
+@charset "UTF-8";
+body{
+    background-color: grey;
+    font-family: "Comic Sans MS";
+}
+
+h1, h2, h3 {
+    color: brown;
+}
+
+h3{
+    text-decoration: underline;
+}
+
+ul{
+    list-style-type: circle;
+}
+
+td{
+    border: 1px dotted black;
+}
+
+
+
+p{
+    text-indent: 10px;
+    font-style: italic;
+}

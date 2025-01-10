@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int funkcija(int a, int b) {
+    if(a > b){
+    }
+    else if(b > a){
+        a=b;
+    }
+    else {
+        cout << "Stevili sta enaki.";
+    }
+    return a;
+}
+int main() {
+    int a,b;
+    cin >> a;
+    cin >> b;
+
+    cout << funkcija(a,b);
+
+    return 0;
+}

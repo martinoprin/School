@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int strlen(char tab[]){
+    int i = 0;
+    while(tab[i]!='\0'){
+        i++;
+        cout << tab[i];
+    }
+    return i; 
+}
+
+int main() {
+    char tab[5];
+    cin >> tab;
+    cout << tab;
+    int d = strlen(tab);
+    cout << d;
+    return 0;
+    
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>Vaja 3d</title>
+</head>
+<body>
+    <h1>Opravki</h1>
+    <div class="opravek">
+        <form class="form">
+            <label for="naslov">Naslov</label>
+            <input type="text" id="naslov">
+            <label for="opis">Opis</label>
+            <input type="text" id="opis">
+            <label for="priority">Prioriteta</label>
+            <select id="priority" name="priority">
+                <option value="visoka">Visoka</option>
+                <option value="srednja">Srednja</option>
+                <option value="nizka">Nizka</option>
+            </select>
+            <label for="date">Datum</label>
+            <input type="date" id="date" name="date">
+            <button class="btn" onclick="dodajOpravek()">Dodaj opravek</button>
+        </form>
+    </div>
+    <div id="taskList"></div>
+    <div id="procent"></div>
+
+    
+</body>
+</html>

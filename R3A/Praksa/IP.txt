@@ -1,0 +1,55 @@
+using System;
+
+namespace IPapp{
+    
+    public class IP
+    {
+        public byte[] IPaddress = new byte[4];
+        
+        public IP()
+        {
+            IPaddress[0] = 0;
+            IPaddress[1] = 0;
+            IPaddress[2] = 0;
+            IPaddress[3] = 0;
+        }
+        public IP(int a, int b, int c, int d)
+        {
+            IPaddress[0] = Convert.ToByte(a);
+            IPaddress[1] = Convert.ToByte(b);
+            IPaddress[2] = Convert.ToByte(c);
+            IPaddress[3] = Convert.ToByte(d);   
+        }
+        
+    }
+    
+    public class main
+    {
+        public static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            IP ip = new IP(0,0,0,0);
+            int maska = rnd.Next(8,25);
+            //rnd.NextBytes(ip.IPaddress);
+            //Console.WriteLine($"IP: {i}.{j}.{k}.{l}\nMaska: {maska}");
+            Console.WriteLine(maska);
+            int count = maska;
+            
+            for(int x = 0; x < 4; x++)
+            {
+                for(int y = 7; y >= 0; y--)
+                {
+                    if(count > 0){
+                    ip.IPaddress[x] |= (byte)(rnd.Next(2)<<y);
+                    count --;
+                    }
+                }
+            }
+            int i = Convert.ToInt32(ip.IPaddress[0]);
+            int j = Convert.ToInt32(ip.IPaddress[1]);
+            int k = Convert.ToInt32(ip.IPaddress[2]);
+            int l = Convert.ToInt32(ip.IPaddress[3]);
+            Console.WriteLine($"IP: {i}.{j}.{k}.{l}\nMaska: {maska}");
+        }
+    }
+}

@@ -1,0 +1,49 @@
+#include <iostream>
+#include <time.h>
+#include <string>
+using namespace std;
+
+struct Clovek{
+    string imena[4] = {"Maja", "Mojca", "Tine", "Jan"};
+    int starost;
+    int visina;
+    int ocene[5];
+    string ime;
+};
+
+int nakljucne_ocene(int ocene[5]){
+    for(int i = 0; i < 5; i++){
+        ocene[i] = rand() % 5 + 1;
+    }
+    return 0;
+};
+Clovek generiraj_cloveka(){
+    Clovek Clovek;
+    srand(time(0));
+    string imena[4] = {"Maja", "Mojca", "Tine", "Jan"};
+    Clovek.ime = imena[rand() % 4];
+    Clovek.starost = rand() % 61 + 15;
+    Clovek.visina = rand() % 51 + 150;
+    for(int i = 0; i < 5; i++){
+        Clovek.ocene[i] = rand() % 5 + 1;
+    }
+    
+    return Clovek;
+};
+    
+int main() {
+    Clovek ljudje[10];
+        for(int i = 0; i < 10; i++){
+            ljudje[i] = generiraj_cloveka();
+        }
+    for(int i = 0; i < 10; i++){
+    cout << ljudje[i].ime << " ";
+    cout << ljudje[i].starost << " ";
+    cout << ljudje[i].visina << " ";
+    for(int j = 0; j < 5; j++){
+        cout << ljudje[i].ocene[j] << " ";
+    }
+    cout << endl;
+    }
+    return 0;
+}
