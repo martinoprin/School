@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -176,4 +177,184 @@
         <script src="assets/js/script.js" defer></script>
         <script src="assets/js/sonce.js" defer></script>
     </body>
+=======
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Martin Oprin</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
+    </head>
+    <body>
+        <div class="preloader-container">
+            <div id="preloader" class="preloader"></div>
+        </div>
+
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+
+            <a href="index.html" class="logo">
+                <img src="img/unicorn.JPG">
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" id="modalBtn" class="modalBtn">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="dot-navigation">
+            <span class="dot" onclick="scrollToSection('#head')"></span>
+            <span class="dot" onclick="scrollToSection('#about-me')"></span>
+            <span class="dot" onclick="scrollToSection('#work-xp')"></span>  
+            <span class="dot" onclick="scrollToSection('#music')"></span> 
+        </div>
+
+        <nav class="sub-menu" id="sub-menu">
+            <ul>
+
+                <div class="theme-toggle">
+                    <div class="toggle-container">
+                        <span class="icon left">&#x1F31E;</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="theme-switch">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="icon right">&#127762;</span>
+                    </div>
+                </div>
+                
+                <div class="lang-toggle">
+                    <div class="toggle-container">
+                        <span class="flag left">&#x1F1FA;&#x1F1F8;</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="lang-switch">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="flag right">&#x1F1F8;&#x1F1EE;</span>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <section id="head">
+            <img class="headimg" src="img/celada_headshot.jpg">
+            <h1>Martin Oprin</h1>
+            <a class="arrow-button" onclick="scrollToSection('#about-me')">
+                <img src="img/down-arrow1.png">
+            </a>
+        </section>
+
+        <section id="about-me" class="container">
+            <h2 class="lang en">About me</h2>
+            <h2 class="lang sl">O meni</h2>
+            <p class="lang en">My name is Martin Oprin and I am a student at the <a href="https://www.vegova.si">Vegova Ljubljana.</a>
+                I am currently studying computer science and I am in my last year of studies. I am interested in web development and I am currently learning HTML, CSS, JavaScript, and PHP. I am also interested in networking and cybersecurity. In my free time, I started flying FPV-drones and I am currently learning to DJ.</p>
+                
+                <p class="lang sl">Moje ime je Martin Oprin in sem dijak srednje šole <a href="https://www.vegova.si">Vegova Ljubljana.</a>
+                Trenutno študiram računalništvo in sem v zadnjem letniku šolanja. Zanimam me razvoj spletnih aplikacij in trenutno se učim HTML, CSS, JavaScript in PHP. Prav tako me zanimam za kibernetsko varnost. V prostem času se učim letenja z FPV dronom in v prihodnosti bi rad postal DJ na manjših zabavah.</p>
+                       <div class="image-grid">
+                <img src="img/setup.JPG">
+                <img src="img/dron-balkon.jpg">
+                <img src="img/motor.JPG">
+                <img src="img/drone-shot.jpg">
+                <img src="img/dj-setup.jpg">
+                <img src="img/clio.jpg">
+            </div>
+            <button id="show-more-btn" onclick="toggleImages()">Show More</button>
+        </section>
+
+        <section id="work-xp" class="container">
+            <h2 class="lang en">Work experience</h2>
+            <h2 class="lang sl">Delovne izkušnje</h2>
+            <p class="lang en">
+                - 2021: ISKRA ISD - LIVARNA D.O.O. - summer job<br>
+                - 2022: ISKRA ISD - STORITVE D.O.O. - summer job - working with mysql database<br>
+                - 2023: Pizzeria Oliva, Skofja Loka - working as a waiter<br>
+                - 2024: WOLT D.O.O. LJUBLJANA - working as a delivery driver in my free time<br>
+                - 2024: DOMEL, D.O.O. - school practice - working in web development with C#;<br>
+                - 2024: DOMEL, D.O.O. - summer job - working with electorinics;<br>
+            </p>
+            <p class="lang sl">
+                - 2021: ISKRA ISD - LIVARNA D.O.O. - poletno delo<br>
+                - 2022: ISKRA ISD - STORITVE D.O.O. - poletno delo - delo z MySQL bazo podatkov<br>
+                - 2023: Pizzeria Oliva, Škofja Loka - delo kot natakar<br>
+                - 2024: WOLT D.O.O. LJUBLJANA - delo kot dostavljalec v prostem času<br>
+                - 2024: DOMEL, D.O.O. - šolska praksa - razvoj spletnih aplikacij v C#;<br>
+                - 2024: DOMEL, D.O.O. - poletno delo - delo z elektroniko;<br>
+            </p>
+        </section>
+
+        <section id="music" class="container">
+            <h2 class="lang en">Music</h2>
+            <h2 class="lang sl">Glasba</h2>
+            <p class="lang en"><b>Welcome to my musical world!</b></p>
+            <p class="lang en">I'm always down for a good music track.
+                I'm all about music that brings people together and makes life feel a bit more fun.
+                I'm always down for a good remix, this is also one of the reasons why I started DJing.
+                I'm currently learning to DJ and I'm looking forward to playing at some parties in the future.
+                I'm also a big fan of the music festival scene and I'm looking forward to attending some festivals as well.
+            </p>
+            <p class="lang sl"><b>Dobrodošli v mojem glasbenem svetu!</b></p>
+            <p class="lang sl">Vedno sem za dobro glasbo ne glede na žanr.
+                Rad poslusam dobre remixe, to je tudi eden od razlogov, zakaj želim postati DJ v prostem času.
+            </p>
+            
+            <section class="spotify-playlists">
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/4amNv8vtRA5QS8hDZAMWQI?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/3uaTWlKvo9bNLDZ4GPp1JZ?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/56yez4akrWx8g8ImYFfZZs?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </section>
+</section>
+
+        <dialog class="modal" id="modal">
+            <form action="https://formsubmit.co/martinoprin11@gmail.com" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <input type="submit" value="Send">
+              </form>
+            <button id="close">&times;</button>
+        </dialog>
+
+        <div class="cover"></div>
+        <div id="sonce" class="sonce"></div>
+
+
+        <footer id="site-footer" >
+            <p>&copy; 2024 Martin Oprin</p>
+        </footer>
+        <div class="custom-cursor" id="cursor"></div>
+        <script src="assets/js/script.js" defer></script>
+        <script src="assets/js/sonce.js" defer></script>
+    </body>
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f
 </html>

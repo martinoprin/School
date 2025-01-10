@@ -1,0 +1,53 @@
+INSERT
+```sql
+INSERT INTO ime_tabele VALUES (vr1, vr2, …);
+INSERT INTO ime_tabele (atr1, atr2, …) VALUES (vr1, vr2, …);
+```
+PRIMERI:
+```sql
+Kraj(KrajID:N, ImeKraja:A20)
+Dijak(DijakID:N, Ime:A10, Priimek:A20, Razred:A3, DatumRojstva:D, KrajRojstva:N->Kraj, Tocke:N, Vzdevek:A10o)
+
+INSERT INTO DijakVALUES (35, 'Andraž','Kralj', 'G3C','15.3.1995',1000,28,NULL);
+Ali 
+INSERT INTO Dijak (DijakID,Ime,Priimek,Razred,DatumRojstva,KrajRojstva,Tocke) VALUES (35, 'Andraž','Kralj', 'G3C','15.3.1995',1000,28);
+Ali
+INSERT INTO Dijak (DijakID,Priimek, Ime, Razred,DatumRojstva,KrajRojstva,Tocke) VALUES (35, 'Kralj', 'Andraž', 'G3C','15.3.1995',1000,28);
+```
+UPDATE
+```sql
+UPDATE ime_tabele SET ime_atributa = nova_vrednost, ...;
+UPDATE ime_tabele SET ime_atributa = nova_vrednost, ... WHERE (pogoj);
+```
+PRIMERI:
+```sql
+UPDATE Dijak SET Dijak.Priimek=UPPER(Dijak.Priimek), Dijak.Razred=lower(Dijak.Razred);
+
+UPDATE Dijak SET Tocke=Tocke + 1 WHERE (KrajRojstva=4000) AND (Tocke<32);
+
+UPDATE Dijak SET Tocke = 
+CAST (SUBSTRING(Razred from 2 for 1) AS integer) + 10;
+
+UPDATE Dijak SET Vzdevek=NULL WHERE (Priimek LIKE 'B%');
+
+UPDATE Dijak SET Vzdevek=NULL WHERE (Priimek <> Upper(Priimek));  
+```
+DELETE
+```sql
+DELETE FROM ime_tabele;
+DELETE FROM ime_tabele WHERE (pogoj);
+```
+PRIMERI:
+```sql
+DELETE FROM Dijak;
+
+DELETE FROM Dijak
+WHERE (KrajRojstva=4000) AND (Tocke<32);
+
+DELETE FROM Dijak WHERE
+CAST (SUBSTRING(Razred from 2 for 1) AS integer)=3;
+
+DELETE FROM Dijak WHERE Vzdevek IS NULL;
+
+DELETE FROM Dijak WHERE ((Vzdevek IS NULL) AND  (Priimek <> Upper(Priimek));  
+```

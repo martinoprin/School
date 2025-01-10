@@ -1,6 +1,10 @@
 const sonce = document.getElementById('sonce');
 
+<<<<<<< HEAD
 const radius = 800;
+=======
+const radius = window.innerWidth/2;
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f
 
 let zahod = -5; 
 let vzhod = 185;
@@ -14,13 +18,21 @@ function izracunajKot() {
   const soncniZahod = new Date();
 
 
+<<<<<<< HEAD
   //trenutniCas.setHours(13, 0, 0);
+=======
+  //trenutniCas.setHours(17, 0, 0);
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f
   soncniVzhod.setHours(6, 0, 0);
   soncniZahod.setHours(20, 0, 0);
 
 if (trenutniCas >= soncniVzhod && trenutniCas <= soncniZahod) {
   let procent = (trenutniCas - soncniVzhod) / (soncniZahod - soncniVzhod);
   angle = vzhod + (zahod - vzhod) * (procent);
+<<<<<<< HEAD
+=======
+  console.log(angle);
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f
 }
 else {
   angle = 270;

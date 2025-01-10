@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Switch>
 enable
 configure terminal
@@ -44,3 +45,51 @@ int range f0/4-5  //vse povezave med stikali
 channel-group 1 mode active
 
 
+=======
+Switch>
+enable
+configure terminal
+
+Switch(config)#
+hostname S1
+
+S1(config)#
+vlan 10
+name uprava
+
+vlan 11
+name tajnistvo
+//na obeh stikalih oboje
+
+interface f0/1 //do racunalnika
+switchport mode access  
+switchport access vlan 10  //na tist vlan k je racunalnik
+
+show vlan brief // pogledas na ker vlan je nastavljen vmesnik
+
+interface f0/3  //na obeh stikalih za vse
+switchport mode trunk
+switchport trunk allowed vlan 10,11
+
+
+nastavi router-on-a-stick
+hostname R1
+interface g0/0
+no shutdown
+
+exit
+interface g0/0.10
+encapsulation dot1q 10
+ip address 10.77.10.1 255.255.255.0
+
+//za vsak vlan posebej
+
+nastavi ip na racunalnikih
+
+
+nastavi EtherChannel med stikaloma
+int range f0/4-5  //vse povezave med stikali
+channel-group 1 mode active
+
+
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f

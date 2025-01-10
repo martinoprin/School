@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 table {
     border: 1px solid black;
     border-collapse: collapse;
@@ -28,4 +29,36 @@ tr:nth-child(even) td:nth-child(even) {
 body {
     font-family: courier;
 
+=======
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: red;
+}
+
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: red;
+}
+
+tr:nth-child(odd) td:nth-child(odd) {
+    background-color: green;
+}
+
+tr:nth-child(even) td:nth-child(even) {
+    background-color: green;
+}
+
+body {
+    font-family: courier;
+
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f
 }
