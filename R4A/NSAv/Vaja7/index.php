@@ -31,26 +31,37 @@
 
         //danVtabeli();
 
-        function enakPodniz($x, $y, $n){
-            $count = 0;
-            for($i = 0; $i <= mb_strlen($x) - $n; $i++){
-                for($j = 0; $j <= mb_strlen($y) - $n; $j++){
-                    $nx = mb_substr($x, $i, $n);
-                    $ny = mb_substr($y, $j, $n);
-                    echo mb_substr($x, $i, $n) . '<br>';
-                    echo mb_substr($y, $j, $n) . '<br>';
-
-                    if($nx == $ny)
-                        $count++;
+        function enakPodniz($x, $y, $n) {
+            for ($i = 0; $i <= mb_strlen($x) - $n; $i++) {
+                $podnizX = mb_substr($x, $i, $n);
+                if (mb_strpos($y, $podnizX) !== false) {
+                    return true;
                 }
             }
-            return $count;
+            return false;
         }
 
         $x = "aec";
         $y = "aecfjksdah";
         $n = 3;
-        echo enakPodniz($x, $y, $n);
+        //echo enakPodniz($x, $y, $n);
+
+        function podobnost($beseda1, $beseda2){
+            $n = 0;
+            for($i = 0; $i < mb_strlen($beseda1); $i++){
+                for($j = 0; $j < mb_strlen($beseda2); $j++){
+                    //$podniz = mb_substr($beseda1, $i);
+                    if($beseda1[$i]==$beseda2[$j]){
+                        $n++;
+                    }
+                }
+            }
+            echo $n>=ceil(mb_strlen($beseda1)/2);
+            
+        }
+
+
+        echo podobnost("abcd", "ab34");
 
     ?>
 </body>
