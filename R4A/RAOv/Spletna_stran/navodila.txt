@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ODDAJA 9. 12. 2024
 
 Za minimalni standard oz. oceno 2 mora stran okvirno izpolnjevati naslednje pogoje:
@@ -53,3 +54,60 @@ prilagoditev za telefon
 
 
 
+=======
+ODDAJA 9. 12. 2024
+
+Za minimalni standard oz. oceno 2 mora stran okvirno izpolnjevati naslednje pogoje:
+o Portfolio naj vključuje vsaj tri glavne sekcije, vsaka mora biti dostopna iz navigacije.
+o Uporabite navigacijski meni, ki omogoča enostavno premikanje med različnimi sekcijami.
+o Uporabite osnovne CSS stilizacije za izboljšanje vizualne privlačnosti portfolia.
+o Vključite barvno shemo in pisave, ki odražajo vaš osebni stil.
+o Ustvarite razširitev za dodatne informacije o projektih, ki se prikaže ob kliku na posamezen
+projekt. To lahko vključuje slike, video predstavitve ali povezave do zunanjih virov.
+o Dodajte gumb "Prikaži več", ki ob kliku prikaže dodatne podrobnosti s prehodom (npr. slide-
+down animacijo).
+o Uporabite JavaScript za dodajanje osnovne interaktivnosti (npr. skrolanje do sekcij, prikaz
+obvestila ob kliku na kontakt).
+o Vse napake in nepravilnosti pri interakcijah morajo biti odpravljene.
+o Ob nalaganju strani mora ta prikazati status/animacijo nalaganja (preloader).
+
+Za višje ocene morate dodati še več poljubnih funkcionalnosti:
+o Dodajte dodatne sekcije, kot so "Veščine", "Izobrazba", "Reference", ipd.
+o Vsaka sekcija naj vsebuje ustrezne informacije in vizualne elemente (npr. ikone, grafiko).
+o Vključite animacije pri nalaganju vsebine ali ob interakcijah (npr. ob prehodu miške).
+o Dodajte funkcionalnost za preklapljanje med svetlo in temno temo z uporabo JavaScript-a.
+Uporabite localStorage za shranjevanje izbranega načina, da se uporabniška izbira ohrani
+tudi po osvežitvi strani.
+o Dodajte obrazec za kontakt, ki omogoča obiskovalcem, da vas kontaktirajo.
+o Uporabite JavaScript za preverjanje veljavnosti vnosov.
+o Dodajte možnost za prikaz napak ob vnosu z uporabo obvestil (npr. rdeča obroba okoli
+neveljavnih vnosov).
+o Po uspešnem pošiljanju obrazca prikažite potrditev (npr. sporočilo, da je bilo sporočilo
+poslano).
+o Dodajte ozadje ali zvočne efekte, ki se predvajajo ob interakcijah.
+o Uporabite JavaScript za nadzor predvajanja zvoka.
+Prilagoditev za mobilne naprave:
+- Poskrbite, da je vaš portfolio odziven in dobro deluje na mobilnih napravah.
+- Preverite in optimizirajte postavitev za različne velikosti zaslonov.
+
+
+- 3 GLAVNE SEKCIJE - navbar desno
+- DROPDOWN MENU - raztegne se content - MORE 
+- PRELOADER 
+
+HAMBURGER MENU
+- LIGHT/DARK mode
+- LANGUAGE - localStorage
+- ON/OFF - cursor trace
+
+- OBRAZEC ZA KONTAKT - preverjanje veljavnosti vnosa, rdeca obroba okrog neveljavnega vnosa- alert po uspesnem posiljanju
+
+DJ page with music
+
+prilagoditev za telefon
+
+
+
+
+
+>>>>>>> 1a8fd79c76eec120d9df217f096fe8028ab7940f

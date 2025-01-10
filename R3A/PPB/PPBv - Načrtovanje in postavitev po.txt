@@ -1,0 +1,17 @@
+PPBv - Načrtovanje in postavitev podatkovnih baz - vaje
+
+Snov pri vajah:
+1. Access - SUPB (sistem za upravljanje s podatkovno bazo)
+2. ERD - entitetno-relacijski diagrami
+3. SQL (MariaDB - tudi to SUPB)
+4. DEXi (Orange)
+
+Access:
+-podatkovna baza
+-tabela (v relacijskih podatkovnih bazah)
+-stolpec (atributi)
+-podatkovni tip
+-primarni kljuc
+-sestavljene podatke (naslov) je potrebno razdeliti na ločene stolpce
+-povezovanje tabel
+-referenčna intergriteta (celovitost) - podatek v eneme stolpcu mora biti iz nabora vrednosti stolpca v drugi tabeli

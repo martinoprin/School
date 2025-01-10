@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int prastevilo(int n){
+    if (n < 2) return false;
+    for(int i = 2; i<n; i++){
+        if(n % i == 0)
+        return false;
+    }
+    
+}
+
+int main(){
+    int st;
+    cin >> st;
+    if (prastevilo(st)){
+        cout << st << " je prastevilo.";
+    }
+    else {
+        cout << st << " ni prastevilo.";
+    }
+    
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+void funkcija(float cel){
+    float far;
+    far = cel*1.8+32;
+    cout << far;
+}
+
+int main() {
+    float cel; 
+    cin >> cel;
+    funkcija(cel);
+
+    return 0;
+}

@@ -1,0 +1,50 @@
+<html>
+    <head>
+      <title>
+          Arduino-UNO
+      </title>
+
+      <h1><img src="https://pbs.twimg.com/profile_images/928655749605199872/ygogGX2j_400x400.jpg" alt="Arduino LOGO"style="width:200px;height:200px;"><br>
+        <a href="index.html">HOME</a> 
+    </h1>
+    </head>
+    <body><width=100%>
+            Napajanje (USB/okrogla vtičnica) <br>
+
+            Vsaka plošča Arduino potrebuje način za povezavo z virom energije. Arduino UNO se lahko napaja iz kabla USB, ki prihaja iz vašega računalnika ali stenskega napajalnika, ki se konča v vtičnici. Na zgornji sliki je povezava USB označena s št. 1, vtičnica pa je označena s št. 2. 
+            
+            S povezavo USB lahko tudi naložite kodo na ploščo Arduino. 
+            
+            PAZI: NE uporabljajte napajalnika, večjega od 20 voltov, saj boste s tem uničili vaš Arduino. Priporočena napetost za večino modelov Arduino je med 6 in 12 voltov. 
+            
+             <p></p>
+            
+            Zatiči (pini) (5V, 3.3V, GND, analogni, digitalni, PWM, AREF)  
+            
+            Zatiči na Arduinu so mesta, kjer povežete žice za sestavljanje vezja. Običajno imajo črne plastične 'glave', ki vam omogočajo, da žico preprosto priključite na ploščo. Arduino ima več različnih vrst zatičev, od katerih je vsak označen na plošči in se uporablja za različne funkcije. 
+            <p> </p>
+            GND (3): Kratica za 'Ground'- ozemljitev. Na Arduinu je več GND zatičev, kateregakoli od njih lahko uporabite za ozemljitev vašega vezja. 
+            <p> </p>
+            5V (4) & 3.3V (5): 5V pin zagotavlja 5 voltov moči, 3.3V pin pa 3.3 voltov moči. Večina preprostih komponent, ki se uporabljajo z Arduinom, zadostuje od 5 ali 3,3 voltov. 
+            <p> </p>
+            Analogno (6): Območje nožic pod oznako »ANALOG IN« (A0 do A5 na UNO) so zatiči za analogni vhod. Ti zatiči lahko preberejo signal iz analognega senzorja (kot je temperaturni senzor) in ga pretvorijo v digitalno vrednost, ki jo lahko preberemo. 
+            <p> </p>
+            Digitalni (7): nasproti analognih zatičev so digitalni zatiči (od 0 do 13 na UNO). Ti zatiči se lahko uporabljajo za digitalni vhod (na primer za ugotavljanje, ali je gumb pritisnjen) in digitalni izhod (na primer za napajanje LED). 
+            <p> </p>
+            PWM (8): Morda ste opazili tildo (~) poleg nekaterih digitalnih zatičev (3, 5, 6, 9, 10 in 11 na UNO). Ti zatiči delujejo kot običajni digitalni zatiči, lahko pa se uporabljajo tudi za nekaj, kar se imenuje pulzno-širinska modulacija (PWM). Zatiči lahko simulirajo analogni izhod (kot je bledenje LED lučke). 
+            <p> </p>
+            AREF (9): pomeni analogno referenco. Ta pin ni tako uporaben. Včasih se uporablja za nastavitev zunanje referenčne napetosti (med 0 in 5 voltov) kot zgornje meje za analogne vhodne zatiče.  
+            <p> </p>
+            RESET BUTTON (10) (Gumb za ponastavitev): Če ga pritisnete, se bo zatič za ponastavitev začasno povezal z ozemljitvijo in znova zagnal katerokoli kodo, ki je naložena na Arduino.  
+            <p> </p>
+            LED indikator napajanja (11): Majhna LED dioda poleg besede »ON«, mora zasvetiti vsakič, ko Arduino priključite na vir napajanja. Če se ta lučka ne prižge, obstaja velika verjetnost, da je nekaj narobe. 
+            <p> </p>
+            TX RX LED (12): TX je okrajšava za transmit (prenos), RX je okrajšava za receive (sprejem). Ena od LED diod da vizualno indikacijo, ko Arduino sprejema ali prenaša podatke (na primer, ko nalagamo nov program na ploščo). 
+            <p> </p>
+            Glavni IC (13) (glavno integrirano vezje): Črna stvar z vsemi kovinskimi nogami so »možgani« Arduina. Glavna IC na Arduinu se nekoliko razlikuje od plošče do plošče.  
+            <p> </p>
+            Regulator napetosti (14): Regulator napetosti naredi točno to, kar piše - nadzoruje količino napetosti, ki se spusti v ploščo Arduino. Odklopil bo dodatno napetost, ki bi lahko poškodovala vezje. Seveda ima svoje meje, zato svojega Arduina ne priklapljajte na nič več kot 20 voltov.  
+       
+
+    </body>
+</html>

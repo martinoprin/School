@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int tab1[5];
+    int n;
+    
+    for(int i=0;i<5;i++){
+        cin >> n;
+        tab1[i]=n;
+    }
+    for(int i=0;i<5;i++){
+        cout<<2*tab1[i]<<endl;
+    }
+        
+    return 0;
+}

@@ -1,0 +1,48 @@
+#include <iostream>
+#include <time.h>
+#include <string>
+using namespace std;
+
+struct Clovek{
+    string imena[4] = {"Maja", "Mojca", "Tine", "Jan"};
+    int starost;
+    int visina;
+    int ocene[5];
+    string ime;
+};
+
+string nakljucno_ime(string imena[]){
+    srand(time(NULL));
+    return imena[rand() % 4];
+}
+
+int nakljucna_starost(){
+    return rand() % 61 + 15;  
+};
+
+int nakljucna_visina(){
+    return rand() % 51 + 150;  
+};
+
+int nakljucne_ocene(int ocene[5]){
+    for(int i = 0; i < 5; i++){
+        ocene[i] = rand() % 5 + 1;
+    }
+};
+
+int main() {
+    Clovek Clovek;
+    string imena[4] = {"Maja", "Mojca", "Tine", "Jan"};
+    Clovek.ime = nakljucno_ime(Clovek.imena);
+    Clovek.starost = nakljucna_starost();
+    Clovek.visina = nakljucna_visina();
+    Clovek.ocene[5] = nakljucne_ocene(Clovek.ocene);
+    cout << Clovek.ime << " ";
+    cout << Clovek.starost << " ";
+    cout << Clovek.visina << endl;
+    for(int i = 0; i < 5; i++){
+        cout << Clovek.ocene[i] << " ";
+    }
+    
+    return 0;
+}

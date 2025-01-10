@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n, m;
+    cout << "Stolpci: ";
+    cin >> n;
+    cout <<"Vrstice: ";
+    cin >> m;
+    int tab[n][m];
+    int k;
+    for(int j=0;j<n;j++){
+        cout << endl;
+    for(int i=0;i<m;i++){
+        
+        tab[i][j] = k;
+        cout<<tab[i][j] ;
+        cout << "\t";
+        k++;
+    }
+    }
+    
+    
+    
+    return 0;
+}

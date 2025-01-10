@@ -1,0 +1,33 @@
+// * IMPORTANT INFORMATION
+// ! WARNING
+// ? QUESTION
+// TODO 
+
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+
+    int n = 101;
+    int i = 0;   
+    while(i != n){
+        i++;
+        cout << endl;
+        if(i%15==0){
+            cout << "FizzBuzz";
+        }
+        else if(i%3==0){
+            cout << "Fizz";
+        }
+        else if(i%5==0){
+            cout << "Buuz";
+        }
+        else{
+        cout << i;
+        }
+        }
+
+    system("pause"); // Počaka na input, da se konzola ne zapre takoj!
+    return 0;
+}
