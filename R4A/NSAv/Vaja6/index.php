@@ -144,27 +144,20 @@
 
         //print_r(vrniRazlicne($x));
 
-        function enakPodniz($x, $y, $n){
-
-            $znakiX = mb_str_split($x);
-            $podniz = '';
-            for($i = 0; $i < strlen($x); $i++){
-                echo $znakiX[$i];
-                for($j = 0; $j < $n; $j++){
-                    $podniz .= $znakiX[$i+$j];
-                    echo $podniz;
+        function enakPodniz($x, $y, $n) {
+            for ($i = 0; $i <= mb_strlen($x) - $n; $i++) {
+                $podnizX = mb_substr($x, $i, $n);
+                if (mb_strpos($y, $podnizX) !== false) {
+                    return true;
                 }
             }
-            
+            return false;
         }
 
-        $x = "abcdefghijk";
-        $y = "evalvacija";
-        $n = 2;
-        enakPodniz($x, $y, $n);
-
-        //echo substr("abcde", 3, 3);  //tko nardis substring od do
-
+        $x = "š";
+        $y = "š";
+        $n = 1;
+        var_dump(enakPodniz($x, $y, $n));
 
     
     ?>
