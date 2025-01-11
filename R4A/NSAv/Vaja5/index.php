@@ -61,7 +61,9 @@
 
     //$t = napolniBesede();
     //izpisiTabelo($t);
+
     echo '<pre>';
+    /*
     $d = array(
         "1431" => array("ime" => "Rok", "natocenoGorivo" => array(55, 54, 36, 45, 41)),
         "1488" => array("ime" => "Vid", "natocenoGorivo" => array(70, 72)),
@@ -169,7 +171,60 @@
         echo '</tr>';
     }
     echo '</table>';
-    ?>
+    */
+
+    $tab = array("bela", "modra", "bela", "rdeča", "zelena", "bela", "rdeča", "zelena", "bela");
+
+    function bitnaSlika($tab) {
+        $tab2 = [];
+        foreach ($tab as $barva) {
+            $tab2[$barva][] = 1;
+        }
+        return $tab2;
+    }
+
+    print_r(bitnaSlika($tab));
+
+    function stevecBarv($tab) {
+        $tab3 = [];
+        foreach ($tab as $barva) {
+            if (isset($tab3[$barva])) {
+                $tab3[$barva]++;
+            } else {
+                $tab3[$barva] = 1;
+            }
+        }
+        return $tab3;
+    }
+
+    function izpisiBitnaSlika($tab) {
+        echo '<table border="1" style="border-collapse:collapse;">';
+        foreach ($tab as $barva => $values) {
+            echo '<tr>';
+            echo '<td>' . $barva . '</td>';
+            foreach ($values as $value) {
+                echo '<td>' . $value . '</td>';
+            }
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
+    function izpisiStevecBarv($tab) {
+        echo '<table border="1" style="border-collapse:collapse;">';
+        foreach ($tab as $barva => $count) {
+            echo '<tr>';
+            echo '<td>' . $barva . '</td>';
+            echo '<td>' . $count . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
+
+    izpisiBitnaSlika(bitnaSlika($tab));
+    izpisiStevecBarv(stevecBarv($tab));
+?>
 </body>
 
 </html>
