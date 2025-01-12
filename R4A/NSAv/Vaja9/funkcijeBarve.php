@@ -98,6 +98,57 @@ function isci($amerika, $zacetnica) {
     echo "</table>";
 }
 
+function razvrstiTekmovalce($rezultati) {
+    uasort($rezultati, function($a, $b) {
+        return $b[0] <=> $a[0];
+    });
 
+    return $rezultati;
+}
+
+function razvrstiTekmovalcePoMetu($rezultati, $n) {
+    uasort($rezultati, function($a, $b) use ($n) {
+        return $b[$n] <=> $a[$n];
+    });
+
+    return $rezultati;
+}
+
+function razvrstiTekmovalcePoSkupniDolzini($rezultati) {
+    uasort($rezultati, function($a, $b) {
+        $sumA = array_sum($a);
+        $sumB = array_sum($b);
+        return $sumB <=> $sumA;
+    });
+
+    return $rezultati;
+}
+
+function razvrstiTekmovalcePoNajdaljsemMetu($rezultati) {
+    uasort($rezultati, function($a, $b) {
+        rsort($a);
+        rsort($b);
+        for ($i = 0; $i < count($a); $i++) {
+            if ($a[$i] != $b[$i]) {
+                return $b[$i] <=> $a[$i];
+            }
+        }
+        return 0;
+    });
+
+    return $rezultati;
+}
+
+function odstraniKratkeMete(&$rezultati, $meja) {
+    foreach ($rezultati as $tekmovalec => $meti) {
+        $rezultati[$tekmovalec] = array_filter($meti, function($met) use ($meja) {
+            return $met >= $meja;
+        });
+
+        if (empty($rezultati[$tekmovalec])) {
+            unset($rezultati[$tekmovalec]);
+        }
+    }
+}
 
 ?>

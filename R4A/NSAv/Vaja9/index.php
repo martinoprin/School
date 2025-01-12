@@ -27,13 +27,7 @@
     //isci($amerika, 'N');
 
 
-    function razvrstiTekmovalce($rezultati) {
-        uasort($rezultati, function($a, $b) {
-            return $b[0] <=> $a[0];
-        });
 
-        return $rezultati;
-    }
 
     $razvrsceniRezultati = razvrstiTekmovalce($rezultati);
 
@@ -41,21 +35,81 @@
     //print_r($razvrsceniRezultati);
     echo "</pre>";
 
-    function razvrstiTekmovalcePoMetu($rezultati, $n) {
-        uasort($rezultati, function($a, $b) use ($n) {
-            return $b[$n] <=> $a[$n];
-        });
-    
-        return $rezultati;
-    }
+
     
     $n = 1;
     $razvrsceniRezultatiPoMetu = razvrstiTekmovalcePoMetu($rezultati, $n);
     
     echo "<pre>";
-    print_r($razvrsceniRezultatiPoMetu);
+    //print_r($razvrsceniRezultatiPoMetu);
     echo "</pre>";
 
+
+
+    $razvrsceniRezultatiPoSkupniDolzini = razvrstiTekmovalcePoSkupniDolzini($rezultati);
+
+    echo "<pre>";
+    //print_r($razvrsceniRezultatiPoSkupniDolzini);
+    echo "</pre>";
+
+
+
+    $razvrsceniRezultatiPoNajdaljsemMetu = razvrstiTekmovalcePoNajdaljsemMetu($rezultati);
+
+    echo "<pre>";
+    //print_r($razvrsceniRezultatiPoNajdaljsemMetu);
+    echo "</pre>";
+
+
+    $meja = 11;
+    odstraniKratkeMete($rezultati, $meja);
+
+    echo "<pre>";
+    //print_r($rezultati);
+    echo "</pre>";
+
+    //require("funkcijeBeseda.php");
+
+    $beseda = ustvariBesedo(10);
+    echo "Beseda: $beseda<br>";
+
+    list($samoglasniki, $soglasniki) = razdeliBesedo($beseda);
+    echo "Samoglasniki (" . strlen($samoglasniki) . ") : $samoglasniki<br>";
+    echo "Soglasniki (" . strlen($soglasniki) . ") : $soglasniki<br>";
+
+    $prviSoglasnik = poisciPrviSoglasnik($soglasniki);
+    echo "Prvi soglasnik: $prviSoglasnik<br>";
+    function ustvariBesedo($dolzina) {
+        $crke = 'abcdefghijklmnopqrstuvwxyz';
+        $beseda = '';
+        for ($i = 0; $i < $dolzina; $i++) {
+            $beseda .= $crke[rand(0, strlen($crke) - 1)];
+        }
+        return $beseda;
+    }
+
+    function razdeliBesedo($beseda) {
+        $samoglasniki = '';
+        $soglasniki = '';
+        $vseSamoglasniki = 'aeiou';
+        for ($i = 0; $i < strlen($beseda); $i++) {
+            if (strpos($vseSamoglasniki, $beseda[$i]) !== false) {
+                $samoglasniki .= $beseda[$i];
+            } else {
+                $soglasniki .= $beseda[$i];
+            }
+        }
+        return array($samoglasniki, $soglasniki);
+    }
+
+    function poisciPrviSoglasnik($soglasniki) {
+        if (strlen($soglasniki) == 0) {
+            return 'NA';
+        }
+        $soglasnikiArray = str_split($soglasniki);
+        sort($soglasnikiArray);
+        return $soglasnikiArray[0];
+    }
 ?>
 </body>
 </html>
