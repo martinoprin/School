@@ -3,88 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Naloga10 - 3.naloga</title>
 </head>
 <body>
     <?php
-        function narediTabelo($beseda){
-            $tab = [];
-            for ($i = 0; $i < mb_strlen($beseda); $i++){
-                $tab[$i] = mb_substr($beseda, $i, 1);
-            }
-            return $tab;
+    include 'funkcije.php';
+
+    $t1 = napolni();
+
+
+    echo "<br><br>";
+
+    $t1 = razvrstiNarascajoce($t1);
+    function razvrstiNarascajoce($array) {
+        sort($array);
+        return $array;
+    }
+    echo "<table border='1' style='border-collapse:collapse;'><tr>";
+    foreach ($t1 as $char) {
+        if ($char == $t1[0]) {
+            echo "<td style='background-color: grey;'>$char</td>";
+        } elseif ($char == $t1[count($t1) - 1]) {
+            echo "<td style='background-color: blue;'>$char</td>";
+        } else {
+            echo "<td>$char</td>";
         }
-        //$t=narediTabelo("se hecaš 🤔"); print_r($t);
+    }
+    echo "</tr></table>";
 
-        function abeceda($niz){
-            $tab = [];
-            $tempstr = '';
-            $j = 0;
-            for($i = 0; $i <= mb_strlen($niz); $i++){
-                if(mb_substr($niz, $i, 1) == '#' || $i == mb_strlen($niz)){
-                    $tab[] = $tempstr;
-                    $tempstr = '';
-                } else {
-                    $tempstr .= mb_substr($niz, $i, 1);
-                }
-            }
-            sort($tab);
-            foreach ($tab as $index => $name){
-                echo $name;
-            }
+    echo "<br><br>";
+
+    $minChar = $t1[0];
+    $maxChar = $t1[count($t1) - 1];
+    $minCount = count(array_keys($t1, $minChar));
+    $maxCount = count(array_keys($t1, $maxChar));
+
+    echo "Najmanjša črka $minChar se v tabeli ponovi $minCount krat.<br>";
+    echo "Največja črka $maxChar se v tabeli ponovi $maxCount krat.<br>";
+
+    
+
+    function narediT2($t1){
+        $t2 = [];
+        for($i = 65; $i <= 90; $i++){
+            $t2[chr($i)] = 0;
         }
-        //abeceda("Vesna#Jure#John#Peter#ČuriMuri");
-        
-
-
-
-        /*
-                require('funkcije.php');
-
-        $t1 = napolni();
-        print_r($t1);
-
-        $t1 = razvrstiNarascujoce($t1);
-        $min = $t1[0];
-        $max = $t1[count($t1)-1];
-        $najmanjsa = 0;
-        $najvecja = 0;
-
-        echo '<table style="border:1px solid black; border-collapse: collapse;"><tr>';
+    
+        $znak = $t1[0];
+        $stevec = 0;
         foreach($t1 as $key=>$value){
-            if($value === $min){
-                echo '<td style="border:1px solid black; background-color: grey">'. $value . '</td>';
-                $najmanjsa++;
+            if($value == $znak){
+                $stevec++;
             }
-            else if($value === $max){
-                echo '<td style="border:1px solid black; background-color: blue">'. $value . '</td>';
-                $najvecja++;
-            }
-            else{
-            echo '<td style="border:1px solid black;">'. $value . '</td>';
+            else {
+                $t2[chr(ord($value)-1)] = $stevec;
+                $stevec = 1;
+                $znak = $value;
             }
         }
-        echo '</tr></table>';
-        echo "Najmanjsa crka $min se v tabeli ponovi $najmanjsa krat".'<br>';
-        echo "Najvecja crka $max se v tabeli ponovi $najvecja krat";
+        $t2[$znak] = $stevec;
+    
+        //print_r($t2);
+        return $t2;
+    }
 
-        narediT2($t1);
-        */
-        require('data.php');
-        require('funkcije.php');
+    $t2 = narediT2($t1);
 
-        $t = napolniT($vozila);
-        print_r($t);
+    arsort($t2);
 
-
-
-        for($i = 0; $i < 5; $i++){
-            $znamka = array_rand($t);
-            $oseba1 = array_rand($oseba);
-            nakup($znamka, $oseba1, $t);
-        }
-
-
+    echo "<table border='1' style='border-collapse:collapse;'><tr>";
+    foreach ($t2 as $char => $count) {
+        echo "<td>$char: $count</td>";
+    }
+    echo "</tr></table>";
     ?>
 </body>
 </html>
