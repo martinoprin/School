@@ -82,6 +82,22 @@ function izpis2($amerika) {
         echo "</table><br>";
     }
 }
+function isci($amerika, $zacetnica) {
+    echo 1;
+    echo "<table style='border-collapse:collapse; border: 1px solid black;'>";
+    echo "<tr><th>Ime Kraja</th><th>Kratica države</th><th>Število prebivalcev</th></tr>";
+    foreach ($amerika as $imeKraja => $kraj) {
+        if (stripos($imeKraja, $zacetnica) === 0) {
+            echo "<tr>";
+            echo "<td style='border: 1px solid black; padding: 7px;'>" . $imeKraja . "</td>";
+            echo "<td style='border: 1px solid black; padding: 7px;'>" . $kraj['drzava'] . "</td>";
+            echo "<td style='border: 1px solid black; padding: 7px;'>" . $kraj['prebivalci'] . "</td>";
+            echo "</tr>";
+        }
+    }
+    echo "</table>";
+}
+
 
 
 ?>
