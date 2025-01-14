@@ -85,10 +85,7 @@
             $oseba1 = array_rand($oseba);
             nakup($znamka, $oseba1, $t);
         }
-        function razvrstiNarascujoce($tabela) {
-            sort($tabela);
-            return $tabela;
-        }
+
 
     ?>
 </body>

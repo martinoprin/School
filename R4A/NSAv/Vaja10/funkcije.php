@@ -48,7 +48,7 @@ function napolniT($vozila){
 
 function nakup($znamka, $oseba, &$vozila){
     $lastnik = [];
-    echo $znamka.'<br';
+    echo $znamka.'<br>';
     foreach($vozila as $key=>&$value){
         if($key==$znamka){
             if($value["zaloga"] > 0){
