@@ -11,11 +11,11 @@
         require('data.php');
 
         $t = napolniT($vozila);
-        print_r($t);
+        //print_r($t);
 
-        echo nakup("BMW", "Maja", $vozila);
+        //echo nakup("BMW", "Maja", $vozila);
 
-        
+
     ?>
 </body>
 </html>

@@ -66,4 +66,85 @@ function nakup($znamka, $oseba, &$vozila){
     echo "Nakup ni izveden<br>";
     return 0;
 }
+
+function prodaja($znamka, $oseba, &$vozila) {
+    global $lastnik; 
+
+    if (isset($lastnik[$oseba]) && in_array($znamka, $lastnik[$oseba])) {
+        if (isset($vozila[$znamka])) {
+            $vozila[$znamka]["zaloga"]++;
+        } else {
+            $vozila[$znamka] = array("zaloga" => 1, "prodano" => 0);
+        }
+
+        $key = array_search($znamka, $lastnik[$oseba]); // Find the first occurrence
+        if ($key !== false) {
+            unset($lastnik[$oseba][$key]); // Remove the vehicle
+            $lastnik[$oseba] = array_values($lastnik[$oseba]); // Reindex the array
+        }
+
+        if (empty($lastnik[$oseba])) {
+            unset($lastnik[$oseba]);
+        }
+
+        echo "Prodaja uspešna<br>";
+        return 1;
+    }
+
+    echo "Prodaja ni uspela<br>";
+    return 0;
+}
+
+function izpisLastnikov($znamka) {
+    global $lastnik;
+
+    $owners = [];
+
+    foreach ($lastnik as $oseba => $vozila) {
+        if (in_array($znamka, $vozila)) {
+            $owners[] = $oseba;
+        }
+    }
+
+    if (!empty($owners)) {
+        echo "Lastniki vozil znamke '$znamka':<br>";
+        echo implode(", ", $owners) . "<br>";
+    } else {
+        echo "Ni lastnikov vozil znamke '$znamka'.<br>";
+    }
+}
+
+function prodajaVseh($oseba, &$vozila) {
+    global $lastnik;
+
+    if (isset($lastnik[$oseba]) && !empty($lastnik[$oseba])) {
+        foreach ($lastnik[$oseba] as $znamka) {
+            if (isset($vozila[$znamka])) {
+                $vozila[$znamka]["zaloga"]++;
+            } else {
+                $vozila[$znamka] = array("zaloga" => 1, "prodano" => 0);
+            }
+        }
+        unset($lastnik[$oseba]);
+        echo "Prodaja vseh vozil uspešna<br>";
+        return 1;
+    }
+
+    echo "Prodaja vseh vozil ni uspela<br>";
+    return 0;
+
+    function prikazKolicin() {
+        global $t, $lastnik;
+    
+        echo "<table border='1'>";
+        echo "<tr><th>Oseba</th><th>Število vozil</th></tr>";
+    
+        foreach ($lastnik as $oseba => $vozila) {
+            $stevilo_vozil = count($vozila);
+            echo "<tr><td>$oseba</td><td>$stevilo_vozil</td></tr>";
+        }
+    
+        echo "</table>";
+    }
+}
 ?>
