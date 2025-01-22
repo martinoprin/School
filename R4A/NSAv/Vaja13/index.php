@@ -6,19 +6,17 @@
     <title>Vaja13</title>
 </head>
 <body>
-    <form action="vaja13.php" method="get">
+    <form action="table.php" method="POST">
         <label for="stolpci">Vnesi število stolpcev:</label>
-        <input type="number" name="stolpci" pattern="^[0-9]$" required><br>
+        <input type="text" name="stolpci" pattern="^([1-9]|10)$" required><br>
         <label for="vrstce">Vnesi število vrstic:</label>
-        <input type="number" name="vrstce" pattern="^[0-9]$" required><br>
+        <input type="text" name="vrstce" pattern="^[0-9]$" required><br>
         <label for="barva-diagonale">Vnesi barvo diagonale:</label>
         <input type="color" name="barva-diagonale" required><br>
         <label for="barva-ostale">Vnesi barvo ostalih celic:</label>
         <input type="color" name="barva-ostale" required><br>
         <input type="submit" value="Izrisi">
 
-    <?php
-        
-    ?>
+
 </body>
 </html>
