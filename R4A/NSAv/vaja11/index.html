@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izbriši števke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Izbriši lihe/sode števke</h1>
+
+    <form method="POST" action="form.php">
+        <div class="form-container">
+            <label for="stevilo">Vpišite celo število:</label><br>
+            <input type="text" id="stevilo" name="stevilo" value=""><br><br>
+        </div>
+        
+        <div class="form-container">
+            <label for="vrsta">Izberite, katere števke želite izbrisati:</label><br>
+            <input type="radio" id="liha" name="vrsta" value="1"> Liha
+            <input type="radio" id="soda" name="vrsta" value="0"> Soda
+        </div>
+
+        <div class="form-container">
+            <button type="submit">Briši števke</button>
+        </div>
+    </form>
+
+</body>
+</html>
+
