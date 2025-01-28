@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
-    background-color: #f4f4f9;
+    background-color: #F4F4F9;
 }
 
 h2 {
@@ -15,13 +16,36 @@ h2 {
     font-family: 'Kodchasan', sans-serif;
 }
 
+.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
 
-.container {
+.button-group {
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    gap: 1rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+  }
+
+.edit {
+    background-color: #f39c12;
 }
 
-.box {
-    background-color: #fff;
+.delete {
+    background-color: #e74c3c;
 }
+
+.btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.box h2 {
+    margin: 1rem;
+  }
