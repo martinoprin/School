@@ -51,4 +51,21 @@ h2 {
 
 .box h2 {
     margin: 1rem;
-  }
+}
+
+.plus-button {
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plus-button:hover {
+    color: rgb(47, 89, 230);
+}

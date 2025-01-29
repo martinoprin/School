@@ -75,97 +75,27 @@
             </svg><br>
         </div>
         <div class="box">
-            <h2 class="box-title">Modal window</h2>
-            <div class="modal modal-open">
-                <div class="modal-content">
+          <h2 class="box-title">Modalno okno</h2>
+          <button id="openModalBtn" class="bank-button">Izvedi transakcijo</button>
+          <div id="modal" class="modal">
+              <div class="modal-content">
                   <div class="modal-header">
-                    <h3 class="modal-title">Potrditev transakcije</h3>
-                    <span class="modal-close">&times;</span>
+                      <h2 class="modal-title">Potrditev transakcije</h2>
+                      <span id="closeModal" class="modal-close">&times;</span>
                   </div>
                   <div class="modal-body">
-                    <p>Ali ste prepričani, da želite izvesti plačilo v višini 250 EUR prejemniku Janez Novak?</p>
+                      <p>Ali ste prepričani, da želite izvesti plačilo v višini 250 EUR prejemniku Janez Novak?</p>
                   </div>
                   <div class="modal-footer">
-                    <button class="modal-btn modal-btn-primary">Potrdi</button>
-                    <button class="modal-btn modal-btn-secondary">Prekliči</button>
+                      <button class="bank-button">Potrdi</button>
+                      <button id="cancelModal" class="bank-button2">Prekliči</button>
                   </div>
-                </div>
               </div>
-              
-              <style>
-              .modal {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 1000;
-              }
-              
-              .modal-open {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              }
-              
-              .modal-content {
-                background: white;
-                padding: 24px;
-                border-radius: 8px;
-                width: 90%;
-                max-width: 400px;
-              }
-              
-              .modal-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 16px;
-                padding-bottom: 12px;
-                border-bottom: 1px solid #eee;
-              }
-              
-              .modal-title {
-                color: #1A4D2E;
-                font-size: 1.25rem;
-              }
-              
-              .modal-close {
-                cursor: pointer;
-                font-size: 24px;
-                color: #666;
-              }
-              
-              .modal-body {
-                margin-bottom: 24px;
-                color: #333;
-              }
-              
-              .modal-footer {
-                display: flex;
-                gap: 12px;
-                justify-content: flex-end;
-              }
-              
-              .modal-btn {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-              }
-              
-              .modal-btn-primary {
-                background: #1A4D2E;
-                color: white;
-              }
-              
-              .modal-btn-secondary {
-                background: #B59F3B;
-                color: white;
-              }
-              </style>
+          </div>
+      </div>
+          
+          
+          <script src="assets/js/script.js"></script>
         </div>
     </div>
 </body>
