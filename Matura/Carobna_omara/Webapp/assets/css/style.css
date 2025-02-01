@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Kodchasan', sans-serif;
 
 }
 
@@ -13,7 +14,6 @@ h2 {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    font-family: 'Kodchasan', sans-serif;
 }
 
 .btn {
@@ -54,6 +54,7 @@ h2 {
 }
 
 .plus-button {
+    border-radius: 1rem;
     width: 100%;
     height: 100%;
     font-size: 4rem;

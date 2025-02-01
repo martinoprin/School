@@ -6,28 +6,26 @@
     <title>Čarobna omara</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/box.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <div class="box">
-            <h2>ITEM 1</h2>
-            <div class="button-group">
-                <button class="btn edit">&#x270E;</button>
-                <button class="btn delete">&#x2716;</button>
-            </div>
-        </div>
-        <div class="box">
-            <button class="btn plus-button">+</button>
-        </div>
-
-
-
-        
-
-
+            <button id="createButton" class="btn plus-button">+</button>
+        </div>   
     </div>
-    
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Item</h3>
+            <input type="text" id="editTitle" placeholder="Enter new title">
+            <br>
+            <button id="saveChanges">Save</button>
+            <button id="closeModal">Cancel</button>
+        </div>
+    </div>
+    <script src="assets/js/add-button.js" defer></script>
 </body>
 </html>
