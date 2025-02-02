@@ -32,23 +32,3 @@ document.getElementById('createButton').addEventListener('click', function() {
 });
 
 
-const modal = document.getElementById('editModal');
-    const editTitleInput = document.getElementById('editTitle');
-    let currentTitleElement = null;
-
-    function openModal(titleElement) {
-        currentTitleElement = titleElement;
-        editTitleInput.value = titleElement.textContent;
-        modal.style.display = "flex";
-    }
-
-    document.getElementById('saveChanges').addEventListener('click', function() {
-        if (currentTitleElement) {
-            currentTitleElement.textContent = editTitleInput.value;
-        }
-        modal.style.display = "none";
-    });
-
-    document.getElementById('closeModal').addEventListener('click', function() {
-        modal.style.display = "none";
-    });
