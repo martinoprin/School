@@ -11,10 +11,17 @@ body {
 }
 
 h1 {
-    font-family: "Arimo", serif;
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
     text-align: center;
-    font-size: 3rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
@@ -84,4 +91,13 @@ p {
 }
 .plus-button:hover {
     color: rgb(47, 89, 230);
+}
+
+input {
+    width: 80%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
 }

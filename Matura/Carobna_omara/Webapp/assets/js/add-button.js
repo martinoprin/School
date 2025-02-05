@@ -3,7 +3,9 @@ document.getElementById('createButton').addEventListener('click', function() {
     box.classList.add('box');
 
     const title = document.createElement('h2');
+    const description = document.createElement('p');
     title.textContent = 'ITEM';
+    description.textContent = '';
 
     const buttonGroup = document.createElement('div');
     buttonGroup.classList.add('button-group');
@@ -12,7 +14,17 @@ document.getElementById('createButton').addEventListener('click', function() {
     editButton.classList.add('btn', 'edit');
     editButton.innerHTML = '&#x270E;';
     editButton.addEventListener('click', function() {
-        openModal(title);
+        const boxData = {
+            title: title.textContent,
+            description: description.textContent,
+            color: '',
+            position: '' 
+        };
+        openModal(boxData, function(updatedData) {
+            title.textContent = updatedData.title;
+            description.textContent = updatedData.description;
+        });
+
     });
 
     const deleteButton = document.createElement('button');
@@ -26,6 +38,7 @@ document.getElementById('createButton').addEventListener('click', function() {
     buttonGroup.appendChild(deleteButton);
 
     box.appendChild(title);
+    box.appendChild(description);
     box.appendChild(buttonGroup);
 
     document.getElementById('container').appendChild(box);
